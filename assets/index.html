@@ -8,8 +8,14 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- inspector  ctrl + alt + 'i'  -->
     <a-scene>
-      <a-sky src="./images/test_1.jpg" rotation="0 -130 0"></a-sky>
+      <a-assets>
+        <img id="test1" src="./images/test_1.jpg" alt="test_1" />
+        <img id="test2" src="./images/test_2.jpg" alt="test_2" />
+      </a-assets>
+
+      <a-sky id="skybox" src="#test1"></a-sky>
     </a-scene>
     <script src="main.js"></script>
   </body>
