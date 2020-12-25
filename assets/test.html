@@ -35,6 +35,7 @@
           var data = this.data;
 
           this.el.addEventListener("click", function () {
+            console.log("click!! ");
             //set the skybox source to the new image as per the spot
             var sky = document.getElementById("skybox");
             sky.setAttribute("src", data.linkto);
@@ -65,7 +66,7 @@
         />
       </a-assets>
       <a-entity id="spots" hotspots>
-        <a-entity id="group-point1">
+        <a-entity id="group-point1" cursor="rayOrigin: mouse">
           <a-image
             spot="linkto:#point2;spotgroup:group-point2"
             position="-4 0 10"
@@ -106,6 +107,7 @@
         camera
         position="0 1.6 0"
         look-controls="reverseMouseDrag: true"
+        rotation="0 0 0"
       >
         <a-entity
           cursor="fuse:true;fuseTimeout:1000"
