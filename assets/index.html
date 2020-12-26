@@ -3,20 +3,155 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2020 KMUVCD Exhibition</title>
-    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <title>Home Tour</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.5.1/dist/aframe-look-at-component.min.js"></script>
+    <script>
+      AFRAME.registerComponent("hotspots", {
+        init: function () {
+          this.el.addEventListener("reloadspots", function (evt) {
+            var currspotgroup = document.getElementById(evt.detail.currspots);
+            currspotgroup.setAttribute("scale", "0 0 0");
+
+            var newspotgroup = document.getElementById(evt.detail.newspots);
+            newspotgroup.setAttribute("scale", "1 1 1");
+          });
+        },
+      });
+      AFRAME.registerComponent("spot", {
+        schema: {
+          linkto: { type: "string", default: "" },
+          spotgroup: { type: "string", default: "" },
+        },
+        init: function () {
+          this.el.setAttribute("src", "#hotspot");
+          this.el.setAttribute("look-at", "#cam");
+
+          var data = this.data;
+
+          this.el.addEventListener("click", function () {
+            var sky = document.getElementById("skybox");
+            sky.setAttribute("src", data.linkto);
+
+            var spotcomp = document.getElementById("spots");
+            var currspots = this.parentElement.getAttribute("id");
+            spotcomp.emit("reloadspots", {
+              newspots: data.spotgroup,
+              currspots: currspots,
+            });
+          });
+        },
+      });
+    </script>
   </head>
   <body>
-    <!-- inspector  ctrl + alt + 'i'  -->
     <a-scene>
       <a-assets>
-        <img id="test1" src="./images/test_1.jpg" alt="test_1" />
-        <img id="test2" src="./images/test_2.jpg" alt="test_2" />
+        <img id="point1" src="./images/point_1.jpg" alt="point1" />
+        <img id="point2" src="./images/point_2.jpg" alt="point2" />
+        <img id="point3" src="./images/point_3.jpg" alt="point3" />
+        <img id="point4" src="./images/point_4.jpg" alt="point4" />
+        <img
+          id="hotspot"
+          src="https://cdn.glitch.com/2087dfa6-bd02-4451-a189-36095a66f386%2Fup-arrow.png?1545397127546"
+          crossorigin="anonymous"
+        />
+        <img id="test1" src="./images/testImg/1.jpg" alt="1" />
+        <img id="test2" src="./images/testImg/2.jpg" alt="2" />
+        <img id="test3" src="./images/testImg/3.jpg" alt="3" />
+        <img id="test4" src="./images/testImg/4.jpg" alt="4" />
+        <img id="test5" src="./images/testImg/5.jpg" alt="5" />
+        <img id="test6" src="./images/testImg/6.jpg" alt="6" />
+        <img id="test7" src="./images/testImg/7.jpg" alt="7" />
+        <img id="test8" src="./images/testImg/8.jpg" alt="8" />
       </a-assets>
 
-      <a-sky id="skybox" src="#test1"></a-sky>
+      <a-entity id="spots" hotspots>
+        <a-entity id="group-point1" cursor="rayOrigin: mouse">
+          <a-image
+            spot="linkto:#test2;spotgroup:group-point2"
+            position="12 -4 4"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point2" scale="0 0 0">
+          <a-image
+            spot="linkto:#test1;spotgroup:group-point1"
+            position="-12 -4 0"
+          ></a-image>
+          <a-image
+            spot="linkto:#test3;spotgroup:group-point3"
+            position="12 -4 2"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point3" scale="0 0 0">
+          <a-image
+            spot="linkto:#test2;spotgroup:group-point2"
+            position="-12 -4 0"
+          ></a-image>
+          <a-image
+            spot="linkto:#test4;spotgroup:group-point4"
+            position="10 -4 2"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point4" scale="0 0 0">
+          <a-image
+            spot="linkto:#test3;spotgroup:group-point3"
+            position="-12 -4 0"
+          ></a-image>
+          <a-image
+            spot="linkto:#test5;spotgroup:group-point5"
+            position="10 -4 2"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point5" scale="0 0 0">
+          <a-image
+            spot="linkto:#test4;spotgroup:group-point4"
+            position="-12 -4 0"
+          ></a-image>
+          <a-image
+            spot="linkto:#test6;spotgroup:group-point6"
+            position="10 -4 2"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point6" scale="0 0 0">
+          <a-image
+            spot="linkto:#test5;spotgroup:group-point5"
+            position="-12 -4 0"
+          ></a-image>
+          <a-image
+            spot="linkto:#test7;spotgroup:group-point7"
+            position="10 -4 2"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point7" scale="0 0 0">
+          <a-image
+            spot="linkto:#test6;spotgroup:group-point6"
+            position="-12 -4 0"
+          ></a-image>
+          <a-image
+            spot="linkto:#test8;spotgroup:group-point8"
+            position="10 -4 2"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point8" scale="0 0 0">
+          <a-image
+            spot="linkto:#test7;spotgroup:group-point7"
+            position="-12 -4 0"
+          ></a-image>
+        </a-entity>
+      </a-entity>
+
+      <a-sky id="skybox" src="#test1"> </a-sky>
+      <!-- look-controls reverse true or false ->드래그로 화면 돌리는 방식 -->
+      <a-entity
+        id="cam"
+        camera
+        position="0 1.6 0"
+        look-controls="reverseMouseDrag: true"
+        rotation="0 -100 0"
+      >
+      </a-entity>
     </a-scene>
-    <script src="main.js"></script>
   </body>
 </html>
