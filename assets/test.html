@@ -64,8 +64,92 @@
           src="https://cdn.glitch.com/2087dfa6-bd02-4451-a189-36095a66f386%2Fup-arrow.png?1545397127546"
           crossorigin="anonymous"
         />
+        <img id="test1" src="./images/testImg/1.jpg" alt="1" />
+        <img id="test2" src="./images/testImg/2.jpg" alt="2" />
+        <img id="test3" src="./images/testImg/3.jpg" alt="3" />
+        <img id="test4" src="./images/testImg/4.jpg" alt="4" />
+        <img id="test5" src="./images/testImg/5.jpg" alt="5" />
+        <img id="test6" src="./images/testImg/6.jpg" alt="6" />
+        <img id="test7" src="./images/testImg/7.jpg" alt="7" />
+        <img id="test8" src="./images/testImg/8.jpg" alt="8" />
       </a-assets>
+
       <a-entity id="spots" hotspots>
+        <a-entity id="group-point1" cursor="rayOrigin: mouse">
+          <a-image
+            spot="linkto:#test2;spotgroup:group-point2"
+            position="12 -4 4"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point2" scale="0 0 0">
+          <a-image
+            spot="linkto:#test1;spotgroup:group-point1"
+            position="-12 -4 0"
+          ></a-image>
+          <a-image
+            spot="linkto:#test3;spotgroup:group-point3"
+            position="12 -4 2"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point3" scale="0 0 0">
+          <a-image
+            spot="linkto:#test2;spotgroup:group-point2"
+            position="-12 -4 0"
+          ></a-image>
+          <a-image
+            spot="linkto:#test4;spotgroup:group-point4"
+            position="10 -4 2"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point4" scale="0 0 0">
+          <a-image
+            spot="linkto:#test3;spotgroup:group-point3"
+            position="-12 -4 0"
+          ></a-image>
+          <a-image
+            spot="linkto:#test5;spotgroup:group-point5"
+            position="10 -4 2"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point5" scale="0 0 0">
+          <a-image
+            spot="linkto:#test4;spotgroup:group-point4"
+            position="-12 -4 0"
+          ></a-image>
+          <a-image
+            spot="linkto:#test6;spotgroup:group-point6"
+            position="10 -4 2"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point6" scale="0 0 0">
+          <a-image
+            spot="linkto:#test5;spotgroup:group-point5"
+            position="-12 -4 0"
+          ></a-image>
+          <a-image
+            spot="linkto:#test7;spotgroup:group-point7"
+            position="10 -4 2"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point7" scale="0 0 0">
+          <a-image
+            spot="linkto:#test6;spotgroup:group-point6"
+            position="-12 -4 0"
+          ></a-image>
+          <a-image
+            spot="linkto:#test8;spotgroup:group-point8"
+            position="10 -4 2"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point8" scale="0 0 0">
+          <a-image
+            spot="linkto:#test7;spotgroup:group-point7"
+            position="-12 -4 0"
+          ></a-image>
+        </a-entity>
+      </a-entity>
+
+      <!-- <a-entity id="spots" hotspots>
         <a-entity id="group-point1" cursor="rayOrigin: mouse">
           <a-image
             spot="linkto:#point2;spotgroup:group-point2"
@@ -98,16 +182,16 @@
             position="0 0 -10"
           ></a-image>
         </a-entity>
-      </a-entity>
+      </a-entity> -->
 
-      <a-sky id="skybox" src="#point1"> </a-sky>
+      <a-sky id="skybox" src="#test1"> </a-sky>
       <!-- look-controls reverse true or false ->드래그로 화면 돌리는 방식 -->
       <a-entity
         id="cam"
         camera
         position="0 1.6 0"
         look-controls="reverseMouseDrag: true"
-        rotation="0 0 0"
+        rotation="0 -100 0"
       >
         <a-entity
           cursor="fuse:true;fuseTimeout:1000"
