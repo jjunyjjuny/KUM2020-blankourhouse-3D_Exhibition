@@ -11,6 +11,7 @@
       AFRAME.registerComponent("hotspots", {
         init: function () {
           this.el.addEventListener("reloadspots", function (evt) {
+            console.log(evt.detail.currspots, evt.detail.newspots);
             var currspotgroup = document.getElementById(evt.detail.currspots);
             currspotgroup.setAttribute("scale", "0 0 0");
 
@@ -25,11 +26,11 @@
           spotgroup: { type: "string", default: "" },
         },
         init: function () {
-          this.el.setAttribute("src", "#hotspot");
-          this.el.setAttribute("look-at", "#cam");
-
           var data = this.data;
+          this.el.setAttribute("src", `#${data.linkto}_img`);
 
+          console.log("src :", `#${data.linkto}_img`);
+          this.el.setAttribute("look-at", "#cam");
           this.el.addEventListener("click", function () {
             var sky = document.getElementById("skybox");
             sky.setAttribute("src", data.linkto);
@@ -48,108 +49,378 @@
   <body>
     <a-scene>
       <a-assets>
-        <img id="point1" src="./images/point_1.jpg" alt="point1" />
-        <img id="point2" src="./images/point_2.jpg" alt="point2" />
-        <img id="point3" src="./images/point_3.jpg" alt="point3" />
-        <img id="point4" src="./images/point_4.jpg" alt="point4" />
         <img
           id="hotspot"
-          src="https://cdn.glitch.com/2087dfa6-bd02-4451-a189-36095a66f386%2Fup-arrow.png?1545397127546"
+          src="https://blog.kakaocdn.net/dn/0mySg/btqCUccOGVk/nQ68nZiNKoIEGNJkooELF1/img.jpg"
           crossorigin="anonymous"
         />
-        <img id="test1" src="./images/testImg/1.jpg" alt="1" />
-        <img id="test2" src="./images/testImg/2.jpg" alt="2" />
-        <img id="test3" src="./images/testImg/3.jpg" alt="3" />
-        <img id="test4" src="./images/testImg/4.jpg" alt="4" />
-        <img id="test5" src="./images/testImg/5.jpg" alt="5" />
-        <img id="test6" src="./images/testImg/6.jpg" alt="6" />
-        <img id="test7" src="./images/testImg/7.jpg" alt="7" />
-        <img id="test8" src="./images/testImg/8.jpg" alt="8" />
+        <img src="./images/hotspots/1.png" id="#point01_img" />
+        <img src="./images/hotspots/2.png" id="#point02_img" />
+        <img src="./images/hotspots/3.png" id="#point03_img" />
+        <img src="./images/hotspots/4.png" alt="" id="#point04_img" />
+        <img src="./images/hotspots/5.png" alt="" id="#point05_img" />
+        <img src="./images/hotspots/6.png" alt="" id="#point06_img" />
+        <img src="./images/hotspots/7.png" alt="" id="#point07_img" />
+        <img src="./images/hotspots/8.png" alt="" id="#point08_img" />
+        <img src="./images/hotspots/9.png" alt="" id="#point09_img" />
+        <img src="./images/hotspots/10.png" alt="" id="#point10_img" />
+        <img src="./images/hotspots/11.png" alt="" id="#point11_img" />
+        <img src="./images/hotspots/12.png" alt="" id="#point12_img" />
+        <img src="./images/hotspots/13.png" alt="" id="#point13_img" />
+        <img src="./images/hotspots/14.png" alt="" id="#point14_img" />
+        <img src="./images/hotspots/15.png" alt="" id="#point15_img" />
+        <img src="./images/hotspots/16.png" alt="" id="#point16_img" />
+        <img src="./images/hotspots/17.png" alt="" id="#point17_img" />
+        <img src="./images/hotspots/18.png" alt="" id="#point18_img" />
+        <img src="./images/hotspots/19.png" alt="" id="#point19_img" />
+        <img src="./images/hotspots/20.png" alt="" id="#point20_img" />
+        <img src="./images/hotspots/21.png" alt="" id="#point21_img" />
+        <img src="./images/hotspots/22.png" alt="" id="#point22_img" />
+        <img src="./images/hotspots/23.png" alt="" id="#point23_img" />
+        <img src="./images/hotspots/24.png" alt="" id="#point24_img" />
+        <img src="./images/hotspots/25.png" alt="" id="#point25_img" />
+        <img src="./images/hotspots/26.png" alt="" id="#point26_img" />
+        <img src="./images/hotspots/27.png" alt="" id="#point27_img" />
+        <img src="./images/hotspots/28.png" alt="" id="#point28_img" />
+        <img src="./images/hotspots/29.png" alt="" id="#point29_img" />
+        <img src="./images/hotspots/30.png" alt="" id="#point30_img" />
+        <img src="./images/hotspots/31.png" alt="" id="#point31_img" />
+        <img src="./images/hotspots/32.png" alt="" id="#point32_img" />
+        <img src="./images/hotspots/33.png" alt="" id="#point33_img" />
+        <img src="./images/hotspots/34.png" alt="" id="#point34_img" />
+        <img src="./images/hotspots/35.png" alt="" id="#point35_img" />
+        <img src="./images/hotspots/36.png" alt="" id="#point36_img" />
+        <img src="./images/point00.jpg" alt="" id="point00" />
+        <img src="./images/point01.jpg" alt="" id="point01" />
+        <img src="./images/point02.jpg" alt="" id="point02" />
+        <img src="./images/point03.jpg" alt="" id="point03" />
+        <img src="./images/point04.jpg" alt="" id="point04" />
+        <img src="./images/point05.jpg" alt="" id="point05" />
+        <img src="./images/point06.jpg" alt="" id="point06" />
+        <img src="./images/point07.jpg" alt="" id="point07" />
+        <img src="./images/point08.jpg" alt="" id="point08" />
+        <img src="./images/point09.jpg" alt="" id="point09" />
+        <img src="./images/point10.jpg" alt="" id="point10" />
+        <img src="./images/point11.jpg" alt="" id="point11" />
+        <img src="./images/point12.jpg" alt="" id="point12" />
+        <img src="./images/point13.jpg" alt="" id="point13" />
+        <img src="./images/point14.jpg" alt="" id="point14" />
+        <img src="./images/point15.jpg" alt="" id="point15" />
+        <img src="./images/point16.jpg" alt="" id="point16" />
+        <img src="./images/point17.jpg" alt="" id="point17" />
+        <img src="./images/point18.jpg" alt="" id="point18" />
+        <img src="./images/point19.jpg" alt="" id="point19" />
+        <img src="./images/point20.jpg" alt="" id="point20" />
+        <img src="./images/point21.jpg" alt="" id="point21" />
+        <img src="./images/point22.jpg" alt="" id="point22" />
+        <img src="./images/point23.jpg" alt="" id="point23" />
+        <img src="./images/point24.jpg" alt="" id="point24" />
+        <img src="./images/point25.jpg" alt="" id="point25" />
+        <img src="./images/point26.jpg" alt="" id="point26" />
+        <img src="./images/point27.jpg" alt="" id="point27" />
+        <img src="./images/point28.jpg" alt="" id="point28" />
+        <img src="./images/point29.jpg" alt="" id="point29" />
+        <img src="./images/point30.jpg" alt="" id="point30" />
+        <img src="./images/point31.jpg" alt="" id="point31" />
+        <img src="./images/point32.jpg" alt="" id="point32" />
+        <img src="./images/point33.jpg" alt="" id="point33" />
+        <img src="./images/point34.jpg" alt="" id="point34" />
+        <img src="./images/point35.jpg" alt="" id="point35" />
+        <img src="./images/point36.jpg" alt="" id="point36" />
       </a-assets>
-
-      <a-entity id="spots" hotspots>
-        <a-entity id="group-point1" cursor="rayOrigin: mouse">
+      <a-entity id="spots" hotspots cursor="rayOrigin: mouse">
+        <a-entity id="group-point00">
           <a-image
-            spot="linkto:#test2;spotgroup:group-point2"
-            position="12 -4 4"
+            spot="linkto:#point01;spotgroup:group-point01"
+            position="12 -4 0"
           ></a-image>
         </a-entity>
-        <a-entity id="group-point2" scale="0 0 0">
+        <a-entity id="group-point01" scale="0 0 0">
           <a-image
-            spot="linkto:#test1;spotgroup:group-point1"
+            spot="linkto:#point00;spotgroup:group-point00"
             position="-12 -4 0"
           ></a-image>
           <a-image
-            spot="linkto:#test3;spotgroup:group-point3"
-            position="12 -4 2"
+            spot="linkto:#point02;spotgroup:group-point02"
+            position="12 -4 0"
+          ></a-image>
+          <a-image
+            spot="linkto:#point03;spotgroup:group-point03"
+            position="6 -4 12"
+          ></a-image>
+          <a-image
+            spot="linkto:#point17;spotgroup:group-point17"
+            position="6 -4 -8"
+          ></a-image>
+          <a-image
+            spot="linkto:#point18;spotgroup:group-point18"
+            position="12 -4 -8"
           ></a-image>
         </a-entity>
-        <a-entity id="group-point3" scale="0 0 0">
+        <a-entity id="group-point02" scale="0 0 0">
           <a-image
-            spot="linkto:#test2;spotgroup:group-point2"
+            spot="linkto:#point01;spotgroup:group-point01"
             position="-12 -4 0"
           ></a-image>
           <a-image
-            spot="linkto:#test4;spotgroup:group-point4"
-            position="10 -4 2"
+            spot="linkto:#point03;spotgroup:group-point03"
+            position="-6 -4 12"
+          ></a-image>
+          <a-image
+            spot="linkto:#point04;spotgroup:group-point04"
+            position="0 -4 12"
+          ></a-image>
+          <a-image
+            spot="linkto:#point17;spotgroup:group-point17"
+            position="-6 -4 -8"
+          ></a-image>
+          <a-image
+            spot="linkto:#point18;spotgroup:group-point18"
+            position="0 -4 -8"
+          ></a-image>
+          <a-image
+            spot="linkto:#point21;spotgroup:group-point21"
+            position="12 -4 0"
+          ></a-image>
+          <a-image
+            spot="linkto:#point22;spotgroup:group-point22"
+            position="12 -4 12"
           ></a-image>
         </a-entity>
-        <a-entity id="group-point4" scale="0 0 0">
+        <a-entity id="group-point03" scale="0 0 0">
           <a-image
-            spot="linkto:#test3;spotgroup:group-point3"
+            spot="linkto:#point01;spotgroup:group-point01"
+            position="0 -4 0"
+          ></a-image>
+          <a-image
+            spot="linkto:#point02;spotgroup:group-point02"
+            position="12 -4 0"
+          ></a-image>
+          <a-image
+            spot="linkto:#point04;spotgroup:group-point04"
             position="-12 -4 0"
           ></a-image>
           <a-image
-            spot="linkto:#test5;spotgroup:group-point5"
-            position="10 -4 2"
-          ></a-image>
-        </a-entity>
-        <a-entity id="group-point5" scale="0 0 0">
-          <a-image
-            spot="linkto:#test4;spotgroup:group-point4"
+            spot="linkto:#point00;spotgroup:group-point00"
             position="-12 -4 0"
           ></a-image>
           <a-image
-            spot="linkto:#test6;spotgroup:group-point6"
-            position="10 -4 2"
-          ></a-image>
-        </a-entity>
-        <a-entity id="group-point6" scale="0 0 0">
-          <a-image
-            spot="linkto:#test5;spotgroup:group-point5"
+            spot="linkto:#point00;spotgroup:group-point00"
             position="-12 -4 0"
           ></a-image>
           <a-image
-            spot="linkto:#test7;spotgroup:group-point7"
-            position="10 -4 2"
-          ></a-image>
-        </a-entity>
-        <a-entity id="group-point7" scale="0 0 0">
-          <a-image
-            spot="linkto:#test6;spotgroup:group-point6"
+            spot="linkto:#point00;spotgroup:group-point00"
             position="-12 -4 0"
           ></a-image>
+        </a-entity>
+        <a-entity id="group-point04" scale="0 0 0">
           <a-image
-            spot="linkto:#test8;spotgroup:group-point8"
-            position="10 -4 2"
+            spot="linkto:#point03;spotgroup:group-point03"
+            position="0 -4 0"
           ></a-image>
         </a-entity>
-        <a-entity id="group-point8" scale="0 0 0">
+        <a-entity id="group-point05" scale="0 0 0">
           <a-image
-            spot="linkto:#test7;spotgroup:group-point7"
-            position="-12 -4 0"
+            spot="linkto:#point04;spotgroup:group-point04"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point06" scale="0 0 0">
+          <a-image
+            spot="linkto:#point05;spotgroup:group-point05"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point07" scale="0 0 0">
+          <a-image
+            spot="linkto:#point06;spotgroup:group-point06"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point08" scale="0 0 0">
+          <a-image
+            spot="linkto:#point07;spotgroup:group-point07"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point09" scale="0 0 0">
+          <a-image
+            spot="linkto:#point08;spotgroup:group-point08"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point10" scale="0 0 0">
+          <a-image
+            spot="linkto:#point09;spotgroup:group-point09"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point11" scale="0 0 0">
+          <a-image
+            spot="linkto:#point10;spotgroup:group-point10"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point12" scale="0 0 0">
+          <a-image
+            spot="linkto:#point11;spotgroup:group-point11"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point13" scale="0 0 0">
+          <a-image
+            spot="linkto:#point12;spotgroup:group-point12"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point14" scale="0 0 0">
+          <a-image
+            spot="linkto:#point13;spotgroup:group-point13"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point15" scale="0 0 0">
+          <a-image
+            spot="linkto:#point14;spotgroup:group-point14"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point16" scale="0 0 0">
+          <a-image
+            spot="linkto:#point15;spotgroup:group-point15"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point17" scale="0 0 0">
+          <a-image
+            spot="linkto:#point16;spotgroup:group-point16"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point18" scale="0 0 0">
+          <a-image
+            spot="linkto:#point17;spotgroup:group-point17"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point19" scale="0 0 0">
+          <a-image
+            spot="linkto:#point18;spotgroup:group-point18"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point20" scale="0 0 0">
+          <a-image
+            spot="linkto:#point19;spotgroup:group-point19"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point21" scale="0 0 0">
+          <a-image
+            spot="linkto:#point20;spotgroup:group-point20"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point22" scale="0 0 0">
+          <a-image
+            spot="linkto:#point21;spotgroup:group-point21"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point23" scale="0 0 0">
+          <a-image
+            spot="linkto:#point22;spotgroup:group-point22"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point24" scale="0 0 0">
+          <a-image
+            spot="linkto:#point23;spotgroup:group-point23"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point25" scale="0 0 0">
+          <a-image
+            spot="linkto:#point24;spotgroup:group-point24"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point26" scale="0 0 0">
+          <a-image
+            spot="linkto:#point25;spotgroup:group-point25"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point27" scale="0 0 0">
+          <a-image
+            spot="linkto:#point26;spotgroup:group-point26"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point28" scale="0 0 0">
+          <a-image
+            spot="linkto:#point27;spotgroup:group-point27"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point29" scale="0 0 0">
+          <a-image
+            spot="linkto:#point28;spotgroup:group-point28"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point30" scale="0 0 0">
+          <a-image
+            spot="linkto:#point29;spotgroup:group-point29"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point31" scale="0 0 0">
+          <a-image
+            spot="linkto:#point30;spotgroup:group-point30"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point32" scale="0 0 0">
+          <a-image
+            spot="linkto:#point31;spotgroup:group-point31"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point33" scale="0 0 0">
+          <a-image
+            spot="linkto:#point32;spotgroup:group-point32"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point34" scale="0 0 0">
+          <a-image
+            spot="linkto:#point33;spotgroup:group-point33"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point35" scale="0 0 0">
+          <a-image
+            spot="linkto:#point34;spotgroup:group-point34"
+            position="0 -4 0"
+          ></a-image>
+        </a-entity>
+        <a-entity id="group-point36" scale="0 0 0">
+          <a-image
+            spot="linkto:#point35;spotgroup:group-point35"
+            position="0 -4 0"
           ></a-image>
         </a-entity>
       </a-entity>
 
-      <a-sky id="skybox" src="#test1"> </a-sky>
+      <a-sky id="skybox" src="#point00"> </a-sky>
       <!-- look-controls reverse true or false ->드래그로 화면 돌리는 방식 -->
       <a-entity
         id="cam"
         camera
         position="0 1.6 0"
         look-controls="reverseMouseDrag: true"
-        rotation="0 -100 0"
+        rotation="-15 -90 0"
       >
       </a-entity>
     </a-scene>
