@@ -11,12 +11,16 @@
       AFRAME.registerComponent("hotspots", {
         init: function () {
           this.el.addEventListener("reloadspots", function (evt) {
-            var currspotgroup = document.getElementById(evt.detail.currspots);
-            currspotgroup.setAttribute("scale", "0 0 0");
+            const cam = document.getElementById("cam");
+            // var currspotgroup = document.getElementById(evt.detail.currspots);
+            // currspotgroup.setAttribute("scale", "0 0 0");
             var newspotgroup = document.getElementById(evt.detail.newspots);
             newspotgroup.setAttribute("scale", "1 1 1");
-
-            setTimeout(() => {}, 1000);
+            cam.setAttribute(
+              "animation__reset",
+              `startEvents: reset; property: position; to: 0 1.6 0; dur: 1;`
+            );
+            cam.emit("reset");
           });
         },
       });
@@ -33,7 +37,6 @@
           this.el.addEventListener("click", function () {
             var sky = document.getElementById("skybox");
             const cam = document.getElementById("cam");
-            console.log("data :", data);
             if (data.linkto == "#point26") {
               cam.setAttribute("rotation", "30 90 00");
             }
@@ -41,24 +44,36 @@
               "animation__move",
               `startEvents: move; property: position; to: ${data.x * 200} 1.6 ${
                 data.y * 200
-              }; dur: 500;`
+              }; dur: ${
+                calC(Math.abs(data.x * 200), Math.abs(data.y * 200)) / 4
+              };`
             );
-
-            console.log("cam 1:", cam);
-            cam.emit("move");
-            setTimeout(() => {
-              sky.setAttribute("src", data.linkto);
-              console.log("cam 2:", cam);
-            }, 500);
+            console.log(
+              Math.abs(data.x * 200),
+              Math.abs(data.y * 200),
+              calC(Math.abs(data.x * 200), Math.abs(data.y * 200)) / 4
+            );
             var spotcomp = document.getElementById("spots");
             var currspots = this.parentElement.getAttribute("id");
-            spotcomp.emit("reloadspots", {
-              newspots: data.spotgroup,
-              currspots: currspots,
-            });
+            var currspotgroup = document.getElementById(currspots);
+            currspotgroup.setAttribute("scale", "0 0 0");
+
+            cam.emit("move");
+
+            setTimeout(() => {
+              sky.setAttribute("src", data.linkto);
+
+              spotcomp.emit("reloadspots", {
+                newspots: data.spotgroup,
+                currspots: currspots,
+              });
+            }, calC(Math.abs(data.x * 200), Math.abs(data.y * 200)) / 4 - 50);
           });
         },
       });
+      function calC(a, b) {
+        return Math.sqrt(a ** 2 + b ** 2);
+      }
     </script>
   </head>
   <body>
