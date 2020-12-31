@@ -4,94 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Tour</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.5.1/dist/aframe-look-at-component.min.js"></script>
-    <script>
-      AFRAME.registerComponent("hotspots", {
-        init: function () {
-          this.el.addEventListener("reloadspots", function (evt) {
-            const cam = document.getElementById("cam");
-            var newspotgroup = document.getElementById(evt.detail.newspots);
-            newspotgroup.setAttribute("scale", "1 1 1");
-            cam.setAttribute(
-              "animation__reset",
-              `startEvents: reset; property: position; to: 0 1.6 0; dur: 1;`
-            );
-            cam.emit("reset");
-          });
-        },
-      });
-      AFRAME.registerComponent("spot", {
-        schema: {
-          linkto: { type: "string", default: "" },
-          spotgroup: { type: "string", default: "" },
-        },
-        init: function () {
-          var data = this.data;
-          this.el.setAttribute("src", `#${data.linkto}_img`);
-          this.el.setAttribute("look-at", "#cam");
-
-          this.el.addEventListener("click", function () {
-            var sky = document.getElementById("skybox");
-            const cam = document.getElementById("cam");
-            if (data.linkto == "#point26") {
-              cam.setAttribute("rotation", "-10 0 0");
-            }
-            cam.setAttribute(
-              "animation__move",
-              `startEvents: move; property: position; to: ${data.x * 200} 1.6 ${
-                data.y * 200
-              }; dur: ${
-                calC(Math.abs(data.x * 200), Math.abs(data.y * 200)) / 4
-              };`
-            );
-
-            var spotcomp = document.getElementById("spots");
-            var currspots = this.parentElement.getAttribute("id");
-            var currspotgroup = document.getElementById(currspots);
-            currspotgroup.setAttribute("scale", "0 0 0");
-
-            cam.emit("move");
-
-            setTimeout(() => {
-              sky.setAttribute("src", data.linkto);
-              spotcomp.emit("reloadspots", {
-                newspots: data.spotgroup,
-                currspots: currspots,
-              });
-            }, calC(Math.abs(data.x * 200), Math.abs(data.y * 200)) / 4 - 50);
-          });
-        },
-      });
-      AFRAME.registerComponent("detail", {
-        init: function () {
-          this.el.addEventListener("click", () => {});
-        },
-      });
-      function calC(a, b) {
-        return Math.sqrt(a ** 2 + b ** 2);
-      }
-    </script>
   </head>
   <body>
+    <div id="background"></div>
+    <div id="popup">
+      <div id="container"></div>
+      <div id="dots"></div>
+    </div>
     <a-scene>
       <a-assets>
         <a-asset-item id="bird" src="./images/bird.glb"></a-asset-item>
-        <a-asset-item id="detail01" src="./images/detail/stone.glb"></a-asset-item>
-        <a-asset-item id="detail02" src="./images/detail/stone.glb"></a-asset-item>
-        <a-asset-item id="detail03" src="./images/detail/stone.glb"></a-asset-item>
-        <a-asset-item id="detail04" src="./images/detail/stone.glb"></a-asset-item>
-        <a-asset-item id="detail05" src="./images/detail/stone.glb"></a-asset-item>
-        <a-asset-item id="detail06" src="./images/detail/stone.glb"></a-asset-item>
-        <a-asset-item id="detail07" src="./images/detail/stone.glb"></a-asset-item>
-        <a-asset-item id="detail08" src="./images/detail/stone.glb"></a-asset-item>
-        <a-asset-item id="detail09" src="./images/detail/stone.glb"></a-asset-item>
-        <a-asset-item id="detail10" src="./images/detail/stone.glb"></a-asset-item>
-        <a-asset-item id="detail11" src="./images/detail/stone.glb"></a-asset-item>
-        <a-asset-item id="detail12" src="./images/detail/stone.glb"></a-asset-item>
-        <a-asset-item id="detail13" src="./images/detail/stone.glb"></a-asset-item>
-        <a-asset-item id="detail14" src="./images/detail/stone.glb"></a-asset-item>
+        <a-asset-item
+          id="hong"
+          src="./images/detail/hong/stone.glb"
+        ></a-asset-item>
+
         <img src="./images/hotspots/temp1.png" id="#temp1" />
         <img src="./images/hotspots/temp2.png" id="#temp2" />
         <img src="./images/hotspots/1.png" id="#point01_img" />
@@ -159,21 +90,13 @@
       <a-entity id="spots" hotspots cursor="rayOrigin: mouse" position="0 0 0">
         <a-entity id="group-point00" scale="1 1 1">
           <a-gltf-model
-            detail
-            gltf-model="#detail01"
-            position="-40 0 30"
+            detail="src:hong;"
+            position="-20 0 15"
             rotation="0 0 0"
-            scale="0.1 0.1 0.1"
+            scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000; "
-          ></a-gltf-model
-          >>
-          <a-entity
-            gltf-model="#bird"
-            scale="0.002 0.002 0.002"
-            animation="property: rotation; to: 0 360 0; loop: true; easing:linear; dur:2000; "
-            position="0 0 -2"
-          ></a-entity>
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point01;spotgroup:group-point01;x:10;y:1;"
             position="10 -6 1"
@@ -738,5 +661,6 @@
         rotation="-10 90 0"
       />
     </a-scene>
+    <script src="main.js"></script>
   </body>
 </html>
