@@ -12,9 +12,7 @@
         init: function () {
           this.el.addEventListener("reloadspots", function (evt) {
             const cam = document.getElementById("cam");
-            // var currspotgroup = document.getElementById(evt.detail.currspots);
-            // currspotgroup.setAttribute("scale", "0 0 0");
-            var newspotgroup = document.getElementById(evt.detail.newspots);
+                        var newspotgroup = document.getElementById(evt.detail.newspots);
             newspotgroup.setAttribute("scale", "1 1 1");
             cam.setAttribute(
               "animation__reset",
@@ -48,11 +46,7 @@
                 calC(Math.abs(data.x * 200), Math.abs(data.y * 200)) / 4
               };`
             );
-            console.log(
-              Math.abs(data.x * 200),
-              Math.abs(data.y * 200),
-              calC(Math.abs(data.x * 200), Math.abs(data.y * 200)) / 4
-            );
+            
             var spotcomp = document.getElementById("spots");
             var currspots = this.parentElement.getAttribute("id");
             var currspotgroup = document.getElementById(currspots);
@@ -62,7 +56,6 @@
 
             setTimeout(() => {
               sky.setAttribute("src", data.linkto);
-
               spotcomp.emit("reloadspots", {
                 newspots: data.spotgroup,
                 currspots: currspots,
