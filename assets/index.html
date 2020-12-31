@@ -4,74 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Tour</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.5.1/dist/aframe-look-at-component.min.js"></script>
-    <script>
-      AFRAME.registerComponent("hotspots", {
-        init: function () {
-          this.el.addEventListener("reloadspots", function (evt) {
-            const cam = document.getElementById("cam");
-                        var newspotgroup = document.getElementById(evt.detail.newspots);
-            newspotgroup.setAttribute("scale", "1 1 1");
-            cam.setAttribute(
-              "animation__reset",
-              `startEvents: reset; property: position; to: 0 1.6 0; dur: 1;`
-            );
-            cam.emit("reset");
-          });
-        },
-      });
-      AFRAME.registerComponent("spot", {
-        schema: {
-          linkto: { type: "string", default: "" },
-          spotgroup: { type: "string", default: "" },
-        },
-        init: function () {
-          var data = this.data;
-          this.el.setAttribute("src", `#${data.linkto}_img`);
-          this.el.setAttribute("look-at", "#cam");
-
-          this.el.addEventListener("click", function () {
-            var sky = document.getElementById("skybox");
-            const cam = document.getElementById("cam");
-            if (data.linkto == "#point26") {
-              cam.setAttribute("rotation", "30 90 00");
-            }
-            cam.setAttribute(
-              "animation__move",
-              `startEvents: move; property: position; to: ${data.x * 200} 1.6 ${
-                data.y * 200
-              }; dur: ${
-                calC(Math.abs(data.x * 200), Math.abs(data.y * 200)) / 4
-              };`
-            );
-            
-            var spotcomp = document.getElementById("spots");
-            var currspots = this.parentElement.getAttribute("id");
-            var currspotgroup = document.getElementById(currspots);
-            currspotgroup.setAttribute("scale", "0 0 0");
-
-            cam.emit("move");
-
-            setTimeout(() => {
-              sky.setAttribute("src", data.linkto);
-              spotcomp.emit("reloadspots", {
-                newspots: data.spotgroup,
-                currspots: currspots,
-              });
-            }, calC(Math.abs(data.x * 200), Math.abs(data.y * 200)) / 4 - 50);
-          });
-        },
-      });
-      function calC(a, b) {
-        return Math.sqrt(a ** 2 + b ** 2);
-      }
-    </script>
   </head>
   <body>
+    <div id="background"></div>
+    <div id="popup">
+      <div id="container"></div>
+      <div id="dots"></div>
+    </div>
     <a-scene>
       <a-assets>
+        <a-asset-item id="bird" src="./images/bird.glb"></a-asset-item>
+        <a-asset-item
+          id="hong"
+          src="./images/detail/hong/stone.glb"
+        ></a-asset-item>
+
         <img src="./images/hotspots/temp1.png" id="#temp1" />
         <img src="./images/hotspots/temp2.png" id="#temp2" />
         <img src="./images/hotspots/1.png" id="#point01_img" />
@@ -100,33 +51,33 @@
         <img src="./images/hotspots/33.png" alt="" id="#point33_img" />
         <img src="./images/hotspots/34.png" alt="" id="#point34_img" />
         <img src="./images/hotspots/36.png" alt="" id="#point36_img" />
-        <img src="./images/point00.jpg" alt="" id="point00" />
-        <img src="./images/point01.jpg" alt="" id="point01" />
-        <img src="./images/point02.jpg" alt="" id="point02" />
-        <img src="./images/point04.jpg" alt="" id="point04" />
-        <img src="./images/point08.jpg" alt="" id="point08" />
-        <img src="./images/point09.jpg" alt="" id="point09" />
-        <img src="./images/point11.jpg" alt="" id="point11" />
-        <img src="./images/point13.jpg" alt="" id="point13" />
-        <img src="./images/point14.jpg" alt="" id="point14" />
-        <img src="./images/point16.jpg" alt="" id="point16" />
-        <img src="./images/point17.jpg" alt="" id="point17" />
-        <img src="./images/point18.jpg" alt="" id="point18" />
-        <img src="./images/point19.jpg" alt="" id="point19" />
-        <img src="./images/point20.jpg" alt="" id="point20" />
-        <img src="./images/point21.jpg" alt="" id="point21" />
-        <img src="./images/point22.jpg" alt="" id="point22" />
-        <img src="./images/point23.jpg" alt="" id="point23" />
-        <img src="./images/point24.jpg" alt="" id="point24" />
-        <img src="./images/point26.jpg" alt="" id="point26" />
-        <img src="./images/point27.jpg" alt="" id="point27" />
-        <img src="./images/point29.jpg" alt="" id="point29" />
-        <img src="./images/point30.jpg" alt="" id="point30" />
-        <img src="./images/point31.jpg" alt="" id="point31" />
-        <img src="./images/point32.jpg" alt="" id="point32" />
-        <img src="./images/point33.jpg" alt="" id="point33" />
-        <img src="./images/point34.jpg" alt="" id="point34" />
-        <img src="./images/point36.jpg" alt="" id="point36" />
+        <img src="./images/point/point00.jpg" alt="" id="point00" />
+        <img src="./images/point/point01.jpg" alt="" id="point01" />
+        <img src="./images/point/point02.jpg" alt="" id="point02" />
+        <img src="./images/point/point04.jpg" alt="" id="point04" />
+        <img src="./images/point/point08.jpg" alt="" id="point08" />
+        <img src="./images/point/point09.jpg" alt="" id="point09" />
+        <img src="./images/point/point11.jpg" alt="" id="point11" />
+        <img src="./images/point/point13.jpg" alt="" id="point13" />
+        <img src="./images/point/point14.jpg" alt="" id="point14" />
+        <img src="./images/point/point16.jpg" alt="" id="point16" />
+        <img src="./images/point/point17.jpg" alt="" id="point17" />
+        <img src="./images/point/point18.jpg" alt="" id="point18" />
+        <img src="./images/point/point19.jpg" alt="" id="point19" />
+        <img src="./images/point/point20.jpg" alt="" id="point20" />
+        <img src="./images/point/point21.jpg" alt="" id="point21" />
+        <img src="./images/point/point22.jpg" alt="" id="point22" />
+        <img src="./images/point/point23.jpg" alt="" id="point23" />
+        <img src="./images/point/point24.jpg" alt="" id="point24" />
+        <img src="./images/point/point26.jpg" alt="" id="point26" />
+        <img src="./images/point/point27.jpg" alt="" id="point27" />
+        <img src="./images/point/point29.jpg" alt="" id="point29" />
+        <img src="./images/point/point30.jpg" alt="" id="point30" />
+        <img src="./images/point/point31.jpg" alt="" id="point31" />
+        <img src="./images/point/point32.jpg" alt="" id="point32" />
+        <img src="./images/point/point33.jpg" alt="" id="point33" />
+        <img src="./images/point/point34.jpg" alt="" id="point34" />
+        <img src="./images/point/point36.jpg" alt="" id="point36" />
       </a-assets>
       <a-sky
         id="skybox"
@@ -135,8 +86,17 @@
         animation__fadeout="startEvents: fadeout; property: material.opacity; from: 1; to: 0.3; dur: 1000;"
       >
       </a-sky>
-      <a-entity id="spots" hotspots cursor="rayOrigin: mouse">
+
+      <a-entity id="spots" hotspots cursor="rayOrigin: mouse" position="0 0 0">
         <a-entity id="group-point00" scale="1 1 1">
+          <a-gltf-model
+            detail="src:hong;"
+            position="-20 0 15"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000; "
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point01;spotgroup:group-point01;x:10;y:1;"
             position="10 -6 1"
@@ -698,8 +658,9 @@
         camera
         position="0 1.6 0"
         look-controls="reverseMouseDrag: true"
-        rotation="-10 -90 0"
+        rotation="-10 90 0"
       />
     </a-scene>
+    <script src="main.js"></script>
   </body>
 </html>
