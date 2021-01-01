@@ -59,10 +59,15 @@ AFRAME.registerComponent("detail", {
     this.el.setAttribute("gltf-model", "#" + data.src);
     this.el.addEventListener("click", () => {
       console.log("detail date : ", data);
-      popUp(data.src);
+      if (data.pop) {
+        popUp(data.src);
+      } else if (data.detail) {
+        window.open("http://www.naver.com", "_blank");
+      }
     });
   },
 });
+
 function calC(a, b) {
   return Math.sqrt(a ** 2 + b ** 2);
 }

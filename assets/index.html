@@ -22,6 +22,10 @@
           id="hong"
           src="./images/detail/hong/stone.glb"
         ></a-asset-item>
+        <a-asset-item
+          id="keyring"
+          src="./images/detail/hong/stone.glb"
+        ></a-asset-item>
 
         <img src="./images/hotspots/temp1.png" id="#temp1" />
         <img src="./images/hotspots/temp2.png" id="#temp2" />
@@ -81,21 +85,28 @@
       </a-assets>
       <a-sky
         id="skybox"
-        src="#point00"
+        src="#point31"
         animation__fadein="startEvents: fadein; property: material.opacity; from: 0.3; to: 1; dur: 1000;"
         animation__fadeout="startEvents: fadeout; property: material.opacity; from: 1; to: 0.3; dur: 1000;"
       >
       </a-sky>
-
       <a-entity id="spots" hotspots cursor="rayOrigin: mouse" position="0 0 0">
-        <a-entity id="group-point00" scale="1 1 1">
+        <a-entity id="group-point00" scale="0 0 0">
           <a-gltf-model
-            detail="src:hong;"
+            detail="src:keyring;detail:true"
             position="-20 0 15"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
-          loop: true; easing:linear; dur:2000; "
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:truepop:true"
+            position="-15 0 -25"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
           <a-image
             spot="linkto:#point01;spotgroup:group-point01;x:10;y:1;"
@@ -103,6 +114,46 @@
           ></a-image>
         </a-entity>
         <a-entity id="group-point01" scale="0 0 0">
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="-20 -3 15"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="13 0 -33"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="24 -5 -23"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="24 0 -35"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="0 -3 17"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point00;spotgroup:group-point00;x:-11;y:0;"
             position="-11 -6 0"
@@ -141,6 +192,46 @@
           ></a-image>
         </a-entity>
         <a-entity id="group-point02" scale="0 0 0">
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="-40 -3 3"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="0 0 -33"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="10 -5 -27"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="10 0 -35"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="-15 -3 13"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point01;spotgroup:group-point01;x:-5;y:-2;"
             position="-5 -6 -2"
@@ -167,6 +258,30 @@
           ></a-image>
         </a-entity>
         <a-entity id="group-point04" scale="0 0 0">
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="0 0 25"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="10 -10 20"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="-15 -3 -13"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point02;spotgroup:group-point02;x:0;y:-12;"
             position="0 -6 -12"
@@ -197,6 +312,22 @@
           ></a-image>
         </a-entity>
         <a-entity id="group-point08" scale="0 0 0">
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="-5 10 10"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="23 -3 12"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point04;spotgroup:group-point04;x:0;y:-6;"
             position="0 -2 -6"
@@ -225,18 +356,106 @@
           ></a-image>
         </a-entity>
         <a-entity id="group-point11" scale="0 0 0">
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="-17 7 20"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="-8 -5 -6"
+            rotation="0 0 5"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="-20 15 -18"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point09;spotgroup:group-point09;x:-8;y:4;"
             position="-8 -1 4"
           ></a-image>
         </a-entity>
         <a-entity id="group-point13" scale="0 0 0">
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="30 -3 -10"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="0 0 -12"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="-4 -3 7"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point14;spotgroup:group-point14;x:5;y:5;"
             position="5 -6 5"
           ></a-image>
         </a-entity>
         <a-entity id="group-point14" scale="0 0 0">
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="5 -3 -30"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="-35 0 2"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="-20 -1 -25"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="-25 -3 -10"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="-15 -3 15"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point04;spotgroup:group-point04;x:12;y:0;"
             position="12 -6 0"
@@ -259,12 +478,52 @@
           ></a-image>
         </a-entity>
         <a-entity id="group-point16" scale="0 0 0">
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="-20 13 2"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="10 0 15"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point14;spotgroup:group-point14;x:7;y:0;"
             position="7 -2 0"
           ></a-image>
         </a-entity>
         <a-entity id="group-point17" scale="0 0 0">
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="3 0 -13"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="11 -3 4"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="15 0 -10"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point01;spotgroup:group-point01;x:-6;y:6;"
             position="-6 -6 6"
@@ -299,6 +558,30 @@
           ></a-image>
         </a-entity>
         <a-entity id="group-point18" scale="0 0 0">
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="-25 0 -35"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="-2 -5 -11"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="-3 4 -22"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point01;spotgroup:group-point01;x:-10;y:3;"
             position="-10 -6 3"
@@ -347,6 +630,30 @@
           ></a-image>
         </a-entity>
         <a-entity id="group-point20" scale="0 0 0">
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="-5 -5 -20"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="12 -3 -20"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="25 -3 -5"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point18;spotgroup:group-point18;x:-18;y:2;"
             position="-18 -6 2"
@@ -361,6 +668,30 @@
           ></a-image>
         </a-entity>
         <a-entity id="group-point21" scale="0 0 0">
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="10 -3 3"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="25 -10 20"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="7 2 40"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point02;spotgroup:group-point02;x:-10;y:0;"
             position="-10 -6 0"
@@ -383,6 +714,30 @@
           ></a-image>
         </a-entity>
         <a-entity id="group-point22" scale="0 0 0">
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="4 -3 -30"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="20 -10 -5"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="3 -3 5"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point01;spotgroup:group-point01;x:-17;y:-10;"
             position="-17 -6 -10"
@@ -401,6 +756,22 @@
           ></a-image>
         </a-entity>
         <a-entity id="group-point23" scale="0 0 0">
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="20 -3 -5"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="-20 -3 5"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point19;spotgroup:group-point19;x:-3;y:9;"
             position="-3 -6 9"
@@ -415,6 +786,14 @@
           ></a-image>
         </a-entity>
         <a-entity id="group-point24" scale="0 0 0">
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="-25 -3 7"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point23;spotgroup:group-point23;x:7;y:0;"
             position="7 -6 0"
@@ -453,6 +832,14 @@
           ></a-image>
         </a-entity>
         <a-entity id="group-point29" scale="0 0 0">
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="-5 2 13"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point27;spotgroup:group-point27;x:12;y:3;"
             position="12 -6 3"
@@ -483,6 +870,22 @@
           ></a-image>
         </a-entity>
         <a-entity id="group-point30" scale="0 0 0">
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="5 -6 15"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="-12 -3 7"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point27;spotgroup:group-point27;x:15;y:3;"
             position="15 -6 3"
@@ -512,7 +915,39 @@
             position="2 -6 -18"
           ></a-image>
         </a-entity>
-        <a-entity id="group-point31" scale="0 0 0">
+        <a-entity id="group-point31" scale="1 1 1">
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="10 -3 20"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="10 0 0"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:keyring;detail:true"
+            position="-1 -3 -25"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:hong;pop:true"
+            position="-10 0 -25"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             spot="linkto:#point29;spotgroup:group-point29;x:-5;y:13;"
             position="-5 -6 13"
@@ -658,7 +1093,7 @@
         camera
         position="0 1.6 0"
         look-controls="reverseMouseDrag: true"
-        rotation="-10 90 0"
+        rotation="-10 0 0"
       />
     </a-scene>
     <script src="main.js"></script>
