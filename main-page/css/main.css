@@ -9,7 +9,8 @@ body {
     overflow-x: hidden;
     color: rgb(29, 29, 31);
     letter-spacing: -0.05em;
-    background: rgb(29, 29, 31);
+    /* background: rgb(29, 29, 31); */
+    background: #000;
 }
 
 p {
@@ -39,7 +40,7 @@ h1 {
 
 .header {
     position: fixed;
-    top: 0;
+    top: 2rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -49,20 +50,10 @@ h1 {
     z-index: 10000;
 }
 
-.header > h1 {
-    display: block;
-    text-align: center;
-}
-
 .header > a {
     display: block;
 }
 
-.header > a > .logo {
-    background-color: rgb(255, 238, 0);
-    width: 18rem;
-    height: 5rem;
-}
 
 .section {
     display: flex;
@@ -87,13 +78,9 @@ h1 {
 }
 
 .homeImg {
-    width: 30rem;
     height: 40rem;
-    background: rgb(186, 255, 240);
 }
 
 .keyringImg {
-    width: 30rem;
     height: 40rem;
-    background: rgb(186, 255, 240);
 }
