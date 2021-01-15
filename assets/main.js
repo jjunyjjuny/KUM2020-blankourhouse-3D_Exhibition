@@ -19,9 +19,9 @@ AFRAME.registerComponent("spot", {
   },
   init: function () {
     const data = this.data;
-    this.el.setAttribute("src", `#${data.linkto}_img`);
-    this.el.setAttribute("look-at", "#cam");
-    // this.el.setAttribute("rotation", "-90 0 0");
+    this.el.setAttribute("src", `##movepoint`);
+    // this.el.setAttribute("look-at", "#cam");
+    this.el.setAttribute("rotation", "-90 0 0");
 
     this.el.addEventListener("click", function () {
       const sky = document.getElementById("skybox");
@@ -56,15 +56,18 @@ AFRAME.registerComponent("spot", {
 AFRAME.registerComponent("detail", {
   init: function () {
     const data = this.data;
-    this.el.setAttribute("gltf-model", "#" + data.src);
-    this.el.addEventListener("click", () => {
-      console.log("detail date : ", data);
-      if (data.pop) {
-        popUp(data.src);
-      } else if (data.detail) {
+
+    if (data.pop) {
+      this.el.setAttribute("gltf-model", "#" + data.src);
+      this.el.addEventListener("click", () => {
+        popUp(data);
+      });
+    } else if (data.detail) {
+      this.el.setAttribute("gltf-model", "#" + data.src);
+      this.el.addEventListener("click", () => {
         window.open("http://www.naver.com", "_blank");
-      }
-    });
+      });
+    }
   },
 });
 
@@ -72,7 +75,10 @@ function calC(a, b) {
   return Math.sqrt(a ** 2 + b ** 2);
 }
 
-function popUp(name) {
+function popUp(data) {
+  const { count } = data;
+  console.log("popup :", data);
+  console.log("count :", count);
   const backgorund = document.getElementById("background");
   const popup = document.getElementById("popup");
 
@@ -80,26 +86,27 @@ function popUp(name) {
   popup.classList.add("show");
 
   const container = document.getElementById("container");
-  for (let i = 1; i < 6; i++) {
-    container.appendChild(createSlide(name, i));
+  for (let i = 1; i < +count + 1; i++) {
+    container.appendChild(createSlide(data, i));
   }
 
   const prev = document.createElement("a");
   prev.classList.add("prev");
-  prev.innerHTML = "&#10094;";
+  prev.innerHTML = `<img src="./images/detail/left.svg" />`;
   prev.addEventListener("click", () => {
     plusSlides(-1);
   });
   const next = document.createElement("a");
   next.classList.add("next");
-  next.innerHTML = "&#10095;";
+  next.innerHTML = `<img src="./images/detail/right.svg" />`;
 
   next.addEventListener("click", () => {
     plusSlides(1);
   });
   const close = document.createElement("div");
   close.classList.add("close");
-  close.innerHTML = "X";
+  close.innerHTML = `<img src="./images/detail/X.svg" />`;
+
   close.addEventListener("click", () => {
     closePopUp();
   });
@@ -110,11 +117,14 @@ function popUp(name) {
   createDots();
 }
 
-function createSlide(name, i) {
+function createSlide(data, i) {
+  const { name, type } = data;
+  console.log("name, type :", name, type);
+
   const slide = document.createElement("div");
   slide.classList.add("slide", "fade");
   const imgTag = document.createElement("img");
-  imgTag.setAttribute("src", `./images/detail/${name}/${i}.jpg`);
+  imgTag.setAttribute("src", `./images/detail/${name}/${type}/${i}.jpg`);
   imgTag.style.width = "500px";
   imgTag.style.height = "500px";
   if (i !== 1) {
@@ -148,8 +158,8 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-  var slides = document.getElementsByClassName("slide");
-  var dots = document.getElementsByClassName("dot");
+  const slides = document.getElementsByClassName("slide");
+  const dots = document.getElementsByClassName("dot");
   if (n > slides.length) {
     slideIndex = 1;
   }
