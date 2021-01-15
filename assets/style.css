@@ -10,7 +10,7 @@ body {
 #background {
   width: 100%;
   height: 100%;
-  background: silver;
+  background: black;
   opacity: 0.5;
   position: absolute;
   z-index: 1;
@@ -34,14 +34,29 @@ body {
 #container {
   width: 80%;
   height: 80%;
-  background: black;
+  background: white;
   position: relative;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 5px 10px white;
 }
-
-.silde {
-  display: none;
+.slideTitle {
+  display: flex;
+  justify-content: center;
+  height: 16.6%;
+  align-items: center;
+}
+.slideTitle > img {
+  height: 40%;
+}
+.slide {
+  height: 75%;
+}
+.slide > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .prev,
 .next,
@@ -49,29 +64,23 @@ body {
   cursor: pointer;
   position: absolute;
   width: auto;
-  margin-top: -22px;
   padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
   user-select: none;
 }
 .prev {
   top: 50%;
-
-  left: 0;
+  left: 7%;
 }
 /* Position the "next button" to the right */
 .next {
   top: 50%;
-  right: 0;
+  right: 7%;
   border-radius: 3px 0 0 3px;
 }
 .close {
-  top: 0;
-  right: 0;
+  top: 2%;
+  left: 1%;
 }
 .prev:hover,
 .next:hover,
@@ -79,17 +88,23 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 #dots {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8.33%;
 }
 .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
+  height: 7px;
+  width: 7px;
   margin: 0 2px;
-  background-color: #bbb;
   border-radius: 50%;
+  border: 1px solid #717171;
   display: inline-block;
   transition: background-color 0.6s ease;
+}
+.dot + .dot {
+  margin-left: 7px;
 }
 
 .active,

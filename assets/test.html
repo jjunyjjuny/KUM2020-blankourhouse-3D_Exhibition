@@ -4,79 +4,144 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-look-at-component@0.5.1/dist/aframe-look-at-component.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <button id="pre"><</button><button id="next">></button
-    ><span>current page :</span><span id="current">0</span>
-    <a-scene>
-      <a-assets>
-        <img src="./images/test/0.jpg" alt="" id="0" />
-        <img src="./images/test/1.jpg" alt="" id="1" />
-        <img src="./images/test/2.jpg" alt="" id="2" />
-        <img src="./images/test/3.jpg" alt="" id="3" />
-        <img src="./images/test/4.jpg" alt="" id="4" />
-        <img src="./images/test/5.jpg" alt="" id="5" />
-        <img src="./images/test/6.jpg" alt="" id="6" />
-        <img src="./images/test/7.jpg" alt="" id="7" />
-        <img src="./images/test/8.jpg" alt="" id="8" />
-        <img src="./images/test/9.jpg" alt="" id="9" />
-        <img src="./images/test/10.jpg" alt="" id="10" />
-        <img src="./images/test/11.jpg" alt="" id="11" />
-        <img src="./images/test/12.jpg" alt="" id="12" />
-        <img src="./images/test/13.jpg" alt="" id="13" />
-        <img src="./images/test/14.jpg" alt="" id="14" />
-        <img src="./images/test/15.jpg" alt="" id="15" />
-        <img src="./images/test/16.jpg" alt="" id="16" />
-        <img src="./images/test/17.jpg" alt="" id="17" />
-        <img src="./images/test/18.jpg" alt="" id="18" />
-        <img src="./images/test/19.jpg" alt="" id="19" />
-        <img src="./images/test/20.jpg" alt="" id="20" />
-        <img src="./images/test/21.jpg" alt="" id="21" />
-        <img src="./images/test/22.jpg" alt="" id="22" />
-        <img src="./images/test/23.jpg" alt="" id="23" />
-        <img src="./images/test/24.jpg" alt="" id="24" />
-        <img src="./images/test/25.jpg" alt="" id="25" />
-        <img src="./images/test/26.jpg" alt="" id="26" />
-        <img src="./images/test/27.jpg" alt="" id="27" />
-        <img src="./images/test/28.jpg" alt="" id="28" />
-        <img src="./images/test/29.jpg" alt="" id="29" />
-        <img src="./images/test/30.jpg" alt="" id="30" />
-        <img src="./images/test/31.jpg" alt="" id="31" />
-        <img src="./images/test/32.jpg" alt="" id="32" />
-        <img src="./images/test/33.jpg" alt="" id="33" />
-        <img src="./images/test/34.jpg" alt="" id="34" />
-        <img src="./images/test/35.jpg" alt="" id="35" />
-        <img src="./images/test/36.jpg" alt="" id="36" />
-      </a-assets>
-      <a-sky id="skybox" src="#0"> </a-sky>
-      <a-entity
-        id="cam"
-        camera
-        position="0 1.6 0"
-        look-controls="reverseMouseDrag: true"
-        rotation="0 -90 0"
-      >
-      </a-entity>
-    </a-scene>
+    <div id="background"></div>
+    <div id="popup">
+      <div id="container"></div>
+    </div>
     <script>
-      const pre = document.getElementById("pre");
-      const next = document.getElementById("next");
-      const sky = document.getElementById("skybox");
-      const current = document.getElementById("current");
-      let num = 0;
-      pre.addEventListener("click", () => {
-        console.log("pre");
-        sky.setAttribute("src", `#${--num}`);
-        current.innerHTML = num;
-      });
-      next.addEventListener("click", () => {
-        console.log("next");
-        sky.setAttribute("src", `#${++num}`);
-        current.innerHTML = num;
-      });
+      const data = {
+        src: "plus",
+        pop: true,
+        name: "09_Minji",
+        type: "a",
+        count: 5,
+      };
+      popUp(data);
+      function popUp(data) {
+        const { count } = data;
+        const backgorund = document.getElementById("background");
+        const popup = document.getElementById("popup");
+
+        backgorund.classList.add("show");
+        popup.classList.add("show");
+
+        const container = document.getElementById("container");
+        const title = document.createElement("div");
+        title.classList.add("slideTitle");
+        const title_img = document.createElement("img");
+        title_img.setAttribute(
+          "src",
+          `./images/detail/${data.name}/keyring_info.svg`
+        );
+        title.appendChild(title_img);
+        container.appendChild(title);
+        for (let i = 1; i < +count + 1; i++) {
+          container.appendChild(createSlide(data, i));
+        }
+
+        const prev = document.createElement("a");
+        prev.classList.add("prev");
+        prev.innerHTML = `<img src="./images/detail/left.svg" />`;
+        prev.addEventListener("click", () => {
+          plusSlides(-1);
+        });
+        const next = document.createElement("a");
+        next.classList.add("next");
+        next.innerHTML = `<img src="./images/detail/right.svg" />`;
+
+        next.addEventListener("click", () => {
+          plusSlides(1);
+        });
+        const close = document.createElement("div");
+        close.classList.add("close");
+        close.innerHTML = `<img src="./images/detail/X.svg" />`;
+
+        close.addEventListener("click", () => {
+          closePopUp();
+        });
+        container.appendChild(prev);
+        container.appendChild(next);
+        container.appendChild(close);
+
+        const dots = createDots();
+        container.appendChild(dots);
+      }
+
+      function createSlide(data, i) {
+        const { name, type } = data;
+
+        const slide = document.createElement("div");
+        slide.classList.add("slide", "fade");
+        const imgTag = document.createElement("img");
+        imgTag.setAttribute("src", `./images/detail/${name}/${type}/0${i}.jpg`);
+        if (i !== 1) {
+          slide.style.display = "none";
+        }
+        slide.appendChild(imgTag);
+        return slide;
+      }
+      function createDots() {
+        const dots = document.createElement("div");
+        dots.setAttribute("id", "dots");
+        for (let i = 1; i < 6; i++) {
+          const span = document.createElement("span");
+          span.classList.add("dot");
+          span.addEventListener("click", () => {
+            currentSlide(i);
+          });
+          dots.appendChild(span);
+        }
+        return dots;
+      }
+
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        console.log(n);
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        const slides = document.getElementsByClassName("slide");
+        const dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (let i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+
+      function closePopUp() {
+        const container = document.getElementById("container");
+        const dots = document.getElementById("dots");
+
+        while (container.firstChild) {
+          container.firstChild.remove();
+        }
+        while (dots.firstChild) {
+          dots.firstChild.remove();
+        }
+
+        document.getElementById("background").classList.toggle("show");
+        document.getElementById("popup").classList.toggle("show");
+      }
     </script>
   </body>
 </html>
