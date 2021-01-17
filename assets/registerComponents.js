@@ -65,7 +65,7 @@ AFRAME.registerComponent("detail", {
     } else if (data.detail) {
       this.el.setAttribute("gltf-model", "#" + data.src);
       this.el.addEventListener("click", () => {
-        window.open("http://www.naver.com", "_blank");
+        window.open(`../main-page/main-page/${data.src}.html`, "_blank");
       });
     }
   },

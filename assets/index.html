@@ -21,7 +21,7 @@
       <a-assets>
         <a-asset-item
           id="plus"
-          src="./images/detail/plus_metal4.gltf"
+          src="./images/detail/plus_metal5"
           response-type="arraybuffer"
         ></a-asset-item>
         <a-asset-item
@@ -62,7 +62,7 @@
         ></a-asset-item>
         <a-asset-item
           id="09_Minji"
-          src="./images/detail/09_Minji/leaflet.glb"
+          src="./images/detail/09_Minji/2222.gltf"
         ></a-asset-item>
         <a-asset-item
           id="10_Yeseon"
@@ -112,17 +112,17 @@
       </a-assets>
       <a-sky
         id="skybox"
-        src="#point00"
+        src="#point36"
         animation__fadein="startEvents: fadein; property: material.opacity; from: 0.3; to: 1; dur: 1000;"
         animation__fadeout="startEvents: fadeout; property: material.opacity; from: 1; to: 0.3; dur: 1000;"
       >
       </a-sky>
       <a-entity id="spots" hotspots cursor="rayOrigin: mouse" position="0 0 0">
-        <a-entity id="group-point00" scale="1 1 1">
+        <a-entity id="group-point00" scale="0 0 0">
           <a-gltf-model
             animation-mixer="clip:animation_0; loop:1; timeScale: 5; crossFadeDuration: 1"
             detail="src:plus;pop:true;name:00_entrance;type:a;count:5"
-            position="-20 0 17"
+            position="-15 0 13"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
@@ -146,7 +146,7 @@
         <a-entity id="group-point01" scale="0 0 0">
           <a-gltf-model
             detail="src:03_Jisu;detail:true"
-            position="-20 -3 15"
+            position="-15 -1 14"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
@@ -154,25 +154,18 @@
           ></a-gltf-model>
           <a-gltf-model
             detail="src:09_Minji;detail:true"
-            position="13 0 -33"
+            position="10 -1 -33"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
-          <!-- <a-gltf-model
-            detail="src:plus;pop:true"
-            position="24 -5 -23"
-            rotation="0 0 0"
-            scale="0.03 0.03 0.03"
-            animation="property: rotation; to: 0 360 0;
-          loop: true; easing:linear; dur:2000;"
-          ></a-gltf-model> -->
+
           <a-gltf-model
             detail="src:plus;pop:true;name:09_Minji;type:a;count:5"
-            position="24 0 -35"
+            position="17 0 -25"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.05 0.05 0.05"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -234,7 +227,7 @@
         <a-entity id="group-point02" scale="0 0 0">
           <a-gltf-model
             detail="src:03_Jisu;detail:true"
-            position="-40 -3 3"
+            position="-30 -0 4"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
@@ -242,25 +235,18 @@
           ></a-gltf-model>
           <a-gltf-model
             detail="src:09_Minji;detail:true"
-            position="0 0 -33"
+            position="-1 -1 -33"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
-          <!-- <a-gltf-model
-            detail="src:plus;pop:true"
-            position="10 -5 -27"
-            rotation="0 0 0"
-            scale="0.03 0.03 0.03"
-            animation="property: rotation; to: 0 360 0;
-          loop: true; easing:linear; dur:2000;"
-          ></a-gltf-model> -->
+
           <a-gltf-model
             detail="src:plus;pop:true;name:09_Minji;type:a;count:5"
             position="10 0 -35"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.05 0.05 0.05"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -268,7 +254,7 @@
             detail="src:plus;pop:true;name:03_Jisu;type:a;count:5"
             position="-15 -3 13"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.05 0.05 0.05"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -306,7 +292,7 @@
         <a-entity id="group-point04" scale="0 0 0">
           <a-gltf-model
             detail="src:04_Jisu;detail:true"
-            position="0 0 25"
+            position="3 -1 25"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
@@ -316,13 +302,13 @@
             detail="src:plus;pop:true;name:04_Jisu;type:a;count:4"
             position="10 -10 20"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.05 0.05 0.05"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
           <a-gltf-model
             detail="src:plus;pop:true;name:03_Jisu;type:a;count:5"
-            position="-15 -3 -13"
+            position="-10 -3 -9"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
@@ -367,7 +353,7 @@
         <a-entity id="group-point08" scale="0 0 0">
           <a-gltf-model
             detail="src:04_Jisu;detail:true"
-            position="-5 10 10"
+            position="0 13 20"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
@@ -377,7 +363,7 @@
             detail="src:plus;pop:true;name:04_Jisu;type:a;count:4"
             position="23 -3 12"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.05 0.05 0.05"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -398,6 +384,22 @@
           ></a-image>
         </a-entity>
         <a-entity id="group-point09" scale="0 0 0">
+          <a-gltf-model
+            detail="src:plus;pop:true;name:05_Seungbin;type:b;count:5"
+            position="20 -10 2"
+            rotation="0 0 5"
+            scale="0.04 0.04 0.04"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:plus;pop:true;name:05_Seungbin;type:a;count:2"
+            position="20 -7 -8"
+            rotation="0 0 0"
+            scale="0.04 0.04 0.04"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             scale="2.0 2.0 2.0"
             spot="linkto:#point04;spotgroup:group-point04;x:-9;y:0;"
@@ -417,14 +419,14 @@
         <a-entity id="group-point11" scale="0 0 0">
           <a-gltf-model
             detail="src:05_Seungbin;detail:true"
-            position="-17 7 20"
+            position="-23 10 20"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.04 0.04 0.04"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
           <a-gltf-model
-            detail="src:plus;pop:true;name:05_Seungbin;type:b;count:2"
+            detail="src:plus;pop:true;name:05_Seungbin;type:b;count:5"
             position="-8 -5 -6"
             rotation="0 0 5"
             scale="0.03 0.03 0.03"
@@ -433,7 +435,7 @@
           ></a-gltf-model>
           <a-gltf-model
             detail="src:plus;pop:true;name:05_Seungbin;type:a;count:2"
-            position="-20 15 -18"
+            position="-15 3 -15"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
@@ -448,7 +450,7 @@
         <a-entity id="group-point13" scale="0 0 0">
           <a-gltf-model
             detail="src:01_Sujeong;detail:true"
-            position="30 -3 -10"
+            position="25 -1 -15"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
@@ -464,7 +466,7 @@
           ></a-gltf-model>
           <a-gltf-model
             detail="src:plus;pop:true;name:01_Sujeong;type:a;count:2"
-            position="-4 -3 7"
+            position="-3 -4 7"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
@@ -479,15 +481,15 @@
         <a-entity id="group-point14" scale="0 0 0">
           <a-gltf-model
             detail="src:01_Sujeong;detail:true"
-            position="5 -3 -30"
+            position="3 -2 -35"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.04 0.04 0.04"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
           <a-gltf-model
             detail="src:02_Yeonji;detail:true"
-            position="-35 0 2"
+            position="-35 0 6"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
@@ -497,7 +499,7 @@
             detail="src:plus;pop:true;name:01_Sujeong;type:b;count:3"
             position="-20 -1 -25"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.04 0.04 0.04"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -505,7 +507,7 @@
             detail="src:plus;pop:true;name:01_Sujeong;type:a;count:2"
             position="-25 -3 -10"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.04 0.04 0.04"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -513,7 +515,7 @@
             detail="src:plus;pop:true;name:02_Yeonji;type:a;count:5"
             position="-15 -3 15"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.04 0.04 0.04"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -546,7 +548,7 @@
         <a-entity id="group-point16" scale="0 0 0">
           <a-gltf-model
             detail="src:02_Yeonji;detail:true"
-            position="-20 13 2"
+            position="-20 11 7"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
@@ -554,9 +556,9 @@
           ></a-gltf-model>
           <a-gltf-model
             detail="src:plus;pop:true;name:02_Yeonji;type:a;count:5"
-            position="10 0 15"
+            position="6 0 15"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.04 0.04 0.04"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -569,25 +571,18 @@
         <a-entity id="group-point17" scale="0 0 0">
           <a-gltf-model
             detail="src:09_Minji;detail:true"
-            position="3 0 -13"
+            position="-1 -1 -13"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
-          <!-- <a-gltf-model
-            detail="src:plus;pop:true;name:03_Jisu;type:a;count:5"
-            position="11 -3 4"
-            rotation="0 0 0"
-            scale="0.03 0.03 0.03"
-            animation="property: rotation; to: 0 360 0;
-          loop: true; easing:linear; dur:2000;"
-          ></a-gltf-model> -->
+
           <a-gltf-model
             detail="src:plus;pop:true;name:09_Minji;type:a;count:5"
             position="15 0 -10"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.04 0.04 0.04"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -635,25 +630,18 @@
         <a-entity id="group-point18" scale="0 0 0">
           <a-gltf-model
             detail="src:09_Minji;detail:true"
-            position="-25 0 -35"
+            position="-20 0 -25"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
-          <!-- <a-gltf-model
-            detail="src:plus;pop:true;name:03_Jisu;type:a;count:5"
-            position="-2 -5 -11"
-            rotation="0 0 0"
-            scale="0.03 0.03 0.03"
-            animation="property: rotation; to: 0 360 0;
-          loop: true; easing:linear; dur:2000;"
-          ></a-gltf-model> -->
+
           <a-gltf-model
             detail="src:plus;pop:true;name:09_Minji;type:a;count:5"
-            position="-3 4 -22"
+            position="-2 3 -18"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.04 0.04 0.04"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -689,6 +677,31 @@
           ></a-image>
         </a-entity>
         <a-entity id="group-point19" scale="0 0 0">
+          <a-gltf-model
+            detail="src:07_Naeun;detail:true"
+            position="35 -2 -4"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:plus;pop:true;name:07_Naeun;type:b;count:5"
+            position="17 -7 -15"
+            scale="0.04 0.04 0.04"
+            rotation="0 0 0"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:plus;pop:true;name:07_Naeun;type:a;count:2"
+            position="30 -3 -16"
+            rotation="0 0 0"
+            scale="0.04 0.04 0.04"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+
           <a-image
             scale="2.0 2.0 2.0"
             spot="linkto:#point02;spotgroup:group-point02;x:-15;y:6;"
@@ -718,9 +731,9 @@
         <a-entity id="group-point20" scale="0 0 0">
           <a-gltf-model
             detail="src:plus;pop:true;name:07_Naeun;type:b;count:5"
-            position="-5 -5 -20"
+            position="-4 -7 -20"
+            scale="0.04 0.04 0.04"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -728,13 +741,13 @@
             detail="src:plus;pop:true;name:07_Naeun;type:a;count:2"
             position="12 -3 -20"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.04 0.04 0.04"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
           <a-gltf-model
             detail="src:07_Naeun;detail:true"
-            position="25 -3 -5"
+            position="25 -5 -5"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
@@ -759,25 +772,18 @@
         <a-entity id="group-point21" scale="0 0 0">
           <a-gltf-model
             detail="src:06_Gahui;detail:true;"
-            position="7 2 40"
+            position="5 0 40"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
-          <!-- <a-gltf-model
-            detail="src:plus;detail:true"
-            position="10 -3 3"
-            rotation="0 0 0"
-            scale="0.03 0.03 0.03"
-            animation="property: rotation; to: 0 360 0;
-          loop: true; easing:linear; dur:2000;"
-          ></a-gltf-model> -->
+
           <a-gltf-model
             detail="src:plus;pop:true;name:06_Gahui;type:a;count:5"
             position="25 -10 20"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.05 0.05 0.05"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -810,25 +816,18 @@
         <a-entity id="group-point22" scale="0 0 0"
           ><a-gltf-model
             detail="src:06_Gahui;detail:true;"
-            position="3 -3 5"
+            position="3 0 10"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
         loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
-          <!-- <a-gltf-model
-            detail="src:plus;detail:true"
-            position="4 -3 -30"
-            rotation="0 0 0"
-            scale="0.03 0.03 0.03"
-            animation="property: rotation; to: 0 360 0;
-          loop: true; easing:linear; dur:2000;"
-          ></a-gltf-model> -->
+
           <a-gltf-model
             detail="src:plus;pop:true;name:06_Gahui;type:a;count:5"
             position="20 -10 -5"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.04 0.04 0.04"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -866,7 +865,7 @@
             detail="src:plus;pop:true;name:07_Naeun;type:c;count:3"
             position="20 -3 -5"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.04 0.04 0.04"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -889,9 +888,9 @@
         <a-entity id="group-point24" scale="0 0 0">
           <a-gltf-model
             detail="src:plus;pop:true;name:08_Seojin;type:a;count:3"
-            position="-25 -3 7"
+            position="-25 -1 7"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.04 0.04 0.04"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -911,7 +910,7 @@
             detail="src:plus;pop:true;name:08_Seojin;type:b;count:2"
             position="-25 15 7"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.07 0.07 0.07"
             animation="property: rotation; to: 0 360 0;
         loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -919,7 +918,7 @@
             detail="src:plus;pop:true;name:08_Seojin;type:c;count:2"
             position="3 15 -20"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.05 0.05 0.05"
             animation="property: rotation; to: 0 360 0;
       loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -927,7 +926,7 @@
             detail="src:plus;pop:true;name:08_Seojin;type:d;count:4"
             position="20 15 0"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.05 0.05 0.05"
             animation="property: rotation; to: 0 360 0;
     loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -966,10 +965,18 @@
         </a-entity>
         <a-entity id="group-point29" scale="0 0 0">
           <a-gltf-model
+            detail="src:13_Seohui;detail:true;"
+            position="-25 -2 -7"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
             detail="src:plus;pop:true;name:13_Seohui;type:a;count:4"
             position="-5 2 13"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.04 0.04 0.04"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -1012,7 +1019,7 @@
         <a-entity id="group-point30" scale="0 0 0">
           <a-gltf-model
             detail="src:13_Seohui;detail:true;"
-            position="-12 -3 7"
+            position="-12 -3 9"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
@@ -1020,9 +1027,17 @@
           ></a-gltf-model>
           <a-gltf-model
             detail="src:plus;pop:true;name:13_Seohui;type:a;count:4"
-            position="5 -6 15"
+            position="20 -1 10"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.04 0.04 0.04"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:plus;pop:true;name:33_point_room;type:a;count:2"
+            position="-25 -9 -20"
+            rotation="0 0 0"
+            scale="0.04 0.04 0.04"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -1065,7 +1080,7 @@
         <a-entity id="group-point31" scale="0 0 0">
           <a-gltf-model
             detail="src:10_Yeseon;detail:true"
-            position="10 -3 20"
+            position="10 -7 20"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
@@ -1073,7 +1088,7 @@
           ></a-gltf-model>
           <a-gltf-model
             detail="src:plus;pop:true;name:10_Yeseon;type:a;count:5"
-            position="10 0 0"
+            position="10 0 1"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
@@ -1081,7 +1096,7 @@
           ></a-gltf-model>
           <a-gltf-model
             detail="src:11_Seoyeon;detail:true"
-            position="-1 -3 -25"
+            position="-4 -4 -25"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
@@ -1089,7 +1104,7 @@
           ></a-gltf-model>
           <a-gltf-model
             detail="src:plus;pop:true;name:11_Seoyeon;type:a;count:4"
-            position="-10 0 -25"
+            position="-2 4 -25"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
@@ -1127,6 +1142,78 @@
           ></a-image>
         </a-entity>
         <a-entity id="group-point32" scale="0 0 0">
+          <a-gltf-model
+            detail="src:10_Yeseon;detail:true"
+            position="30 -8 22"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:plus;pop:true;name:10_Yeseon;type:a;count:5"
+            position="20 1 0"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:11_Seoyeon;detail:true"
+            position="11 -7 -30"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:plus;pop:true;name:11_Seoyeon;type:a;count:4"
+            position="11 3 -30"
+            rotation="0 0 0"
+            scale="0.04 0.04 0.04"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:12_Taegeon;detail:true"
+            position="-38 -3 -25"
+            rotation="0 0 0"
+            scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+        loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:plus;pop:true;name:12_Taegeon;type:a;count:4"
+            position="-18 -2 -30"
+            rotation="0 0 0"
+            scale="0.04 0.04 0.04"
+            animation="property: rotation; to: 0 360 0;
+        loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:plus;pop:true;name:33_point_room;type:a;count:2"
+            position="-30 -8 6"
+            rotation="0 0 0"
+            scale="0.04 0.04 0.04"
+            animation="property: rotation; to: 0 360 0;
+      loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:13_Seohui;detail:true;"
+            position="-38 -1 40"
+            rotation="0 0 0"
+            scale="0.02 0.02 0.02"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:plus;pop:true;name:13_Seohui;type:a;count:4"
+            position="-7 2 40"
+            rotation="0 0 0"
+            scale="0.04 0.04 0.04"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
           <a-image
             scale="2.0 2.0 2.0"
             spot="linkto:#point27;spotgroup:group-point27;x:9;y:13;"
@@ -1168,7 +1255,7 @@
             detail="src:plus;pop:true;name:33_point_room;type:a;count:2"
             position="-15 -8 3"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.04 0.04 0.04"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -1211,7 +1298,7 @@
         <a-entity id="group-point34" scale="0 0 0">
           <a-gltf-model
             detail="src:11_Seoyeon;detail:true;"
-            position="0 -6 -15"
+            position="-3 -6 -15"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
@@ -1219,9 +1306,25 @@
           ></a-gltf-model>
           <a-gltf-model
             detail="src:plus;pop:true;name:11_Seoyeon;type:a;count:4"
-            position="-0 3 -20"
+            position="-5 7 -20"
+            rotation="0 0 0"
+            scale="0.05 0.05 0.05"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:10_Yeseon;detail:true"
+            position="22 -10 40"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
+            animation="property: rotation; to: 0 360 0;
+          loop: true; easing:linear; dur:2000;"
+          ></a-gltf-model>
+          <a-gltf-model
+            detail="src:plus;pop:true;name:10_Yeseon;type:a;count:5"
+            position="23 0 20"
+            rotation="0 0 0"
+            scale="0.04 0.04 0.04"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -1256,10 +1359,10 @@
             position="-11 -6 -3"
           ></a-image>
         </a-entity>
-        <a-entity id="group-point36" scale="0 0 0">
+        <a-entity id="group-point36" scale="1 1 1">
           <a-gltf-model
             detail="src:12_Taegeon;detail:true"
-            position="-15 -3 -2"
+            position="-15 -3 5"
             rotation="0 0 0"
             scale="0.03 0.03 0.03"
             animation="property: rotation; to: 0 360 0;
@@ -1267,9 +1370,9 @@
           ></a-gltf-model>
           <a-gltf-model
             detail="src:plus;pop:true;name:12_Taegeon;type:a;count:4"
-            position="-3 -5 -15"
+            position="-5 -2 -13"
             rotation="0 0 0"
-            scale="0.03 0.03 0.03"
+            scale="0.04 0.04 0.04"
             animation="property: rotation; to: 0 360 0;
           loop: true; easing:linear; dur:2000;"
           ></a-gltf-model>
@@ -1306,13 +1409,12 @@
         </a-entity>
       </a-entity>
 
-      <!-- look-controls reverse true or false ->드래그로 화면 돌리는 방식 -->
       <a-entity
         id="cam"
         camera
         position="0 1.6 0"
         look-controls="reverseMouseDrag: true"
-        rotation="-10 0 0"
+        rotation="-10 180 0"
       />
     </a-scene>
     <script src="main.js"></script>
