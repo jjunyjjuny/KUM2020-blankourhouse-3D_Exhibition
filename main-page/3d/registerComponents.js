@@ -16,6 +16,8 @@ AFRAME.registerComponent("spot", {
   schema: {
     linkto: { type: "string", default: "" },
     spotgroup: { type: "string", default: "" },
+    x: { type: "number", default: 0 },
+    y: { type: "number", default: 0 },
   },
   init: function () {
     const data = this.data;
@@ -54,6 +56,14 @@ AFRAME.registerComponent("spot", {
   },
 });
 AFRAME.registerComponent("detail", {
+  schema: {
+    src: { type: "string", default: "" },
+    pop: { type: "string", default: "" },
+    detail: { type: "string", default: "" },
+    name: { type: "string", default: "" },
+    type: { type: "string", default: "" },
+    count: { type: "number", default: 0 },
+  },
   init: function () {
     const data = this.data;
 
