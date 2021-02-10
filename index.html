@@ -7,6 +7,7 @@
     <title>2020 KMUVCD Graduation Exhibition</title>
     <link rel="stylesheet" href="css/default.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="preload" as="style" href="css/main.css">
   </head>
   <body>
     <div class="container">
@@ -19,14 +20,16 @@
       </header>
       <section class="section" id="section-01">
         <div class="homeTour">
-          <a href="3d/index.html">
+          <a href="../assets/index.html">
             <img class="homeImg" src="assets/svg/homeTour_grey.svg" alt="">
           </a>
           <h2><img src="assets/img/VRtour_white.svg" alt=""></h2>
         </div>
         <div class="keyringTour">
           <a href="page/personalTour.html">
-            <video class="keyringImg" src="assets/video/keyring.webm" autoplay muted loop></video>
+            <video class="keyringImg" poster="assets/video/keyring.gif" autoplay muted loop>
+              <source src="assets/video/keyring.webm" type="video/webm">
+            </video>
           </a>
           <h2><img src="assets/img/Personaltour_white.svg" alt=""></h2>
         </div>
