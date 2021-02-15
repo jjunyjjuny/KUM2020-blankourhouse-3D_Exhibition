@@ -69,7 +69,6 @@ h1 {
   border-bottom: solid #fff 2px;
 }
 
-// 섹션
 .section > div {
     display: flex;
     flex-direction: column;
