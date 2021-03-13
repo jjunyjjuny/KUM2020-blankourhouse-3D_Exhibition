@@ -9,7 +9,7 @@ body {
     overflow-x: hidden;
     color: rgb(255, 255, 255);
     letter-spacing: -0.05em;
-    background: #000;
+    background: #1d1d1f;
     /* background: #000; */
 }
 
@@ -26,12 +26,58 @@ h1 {
     font-size: 1.4rem;
 }
 
+h5 {
+    font-size: 1.2rem;
+    padding-bottom: 3rem;
+}
+
+#load-img-wrap > video,
+#load-img-wrap > img {
+    width: 0px;
+}
+
+a.top {
+  position: fixed;
+  right: 10%;
+  bottom: 50px;
+  display: none;
+  color: black;
+  font-size: 2rem;
+}
+
+/*  */
+.loading-page {
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    position: fixed;
+}
+.loading-mob {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+}
+.loading-web {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    max-height: 100%;
+    transform: translate(-50%,-50%);
+    /* display: none; */
+}
+
+
+/*  */
 .backgroundImg {
   position: absolute;
   z-index: -1;
   width: 100%;
   height: auto;
 }
+
 .backgroundImg > img {
   width: 100%;
 }
@@ -57,7 +103,7 @@ h1 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    z-index: 10000;
+    z-index: 500;
 }
 
 .header > a {
@@ -170,6 +216,8 @@ h1 {
 .desc-elem-name {
   display: block;
   flex: 1 1;
+  line-height: 1.6;
+  padding-right: 3rem;
 }
 
 .desc-elem-text {
@@ -179,7 +227,7 @@ h1 {
 
 .desc-elem-text > a:hover {
   border-bottom: solid #fff 2px;
-} 
+}
 
 .logo-wrap {
   display: flex;
@@ -249,6 +297,40 @@ h1 {
   width: 100%;
   height: 100%;
   background: #fff;
+}
+
+.phone_keyring_gif {
+    display: none;
+}
+
+.web_keyring_gif {
+    display: block;
+}
+
+.swiper-container {
+    width: 100%;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+      /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.swiper-pagination {
+    color: black;
 }
 
 @media screen and (max-width: 768px) {
@@ -349,17 +431,22 @@ h1 {
     width: 90%;
   }
 
-  #section-02 > .main-message > .desc-wrap > .desc-elem {
-    padding-bottom: 0.2em;
+  #section-02 > #sub-page-black > .desc-wrap > .desc-elem {
+      flex-direction: column;
   }
 
   .desc-elem-name {
-    flex: 3 3;
+    flex: 4 4;
   }
 
   .desc-elem-text {
     flex: 5 5;
   }
+
+  .mob-flex .desc-elem-name {
+      flex: 2 2;
+  }
+  
 
   .logo-wrap {
     margin-bottom: 3rem;
@@ -379,9 +466,6 @@ h1 {
     top: -50px;
   }
 
-  .keyring-elem > a {
-  }
-
   .keyring-elem {
     width: 100px;
     position: relative;
@@ -391,7 +475,6 @@ h1 {
   .keyring-elem:nth-child(3n+2) {
     top: 80px;
   }
-
 
   .keyring-elem > a > video {
     width: 100%;
@@ -405,4 +488,24 @@ h1 {
   .keyring-desc > img {
     height: 2rem;
   }
+
+  .phone_keyring_gif {
+      display: block;
+  }
+
+  .web_keyring_gif {
+      display: none;
+  }
+
+  h5 {
+      font-size: .8rem;
+  }
+
+  .loading-web {
+      display: none;
+  }
+  .loading-mob {
+      display: block;
+  }
 }
+
