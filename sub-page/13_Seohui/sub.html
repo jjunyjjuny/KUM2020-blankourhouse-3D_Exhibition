@@ -9,57 +9,95 @@
 	<link rel="stylesheet" href="../../css/default.css" />
 	<link rel="stylesheet" href="../../css/main.css" />
 	<link rel="stylesheet" href="../../css/sub.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
 
 <body>
-  <div class="background-white">
-	</div>
+    <div class="background-white"></div>
 	<div class="container">
 		<header class="header">
-			<a class="header-back" href="../../page/personalTour.html">
-        <img src="../../assets/svg/backPage.svg" alt="">
-      </a>
-      <a href="../../index.html">
-        <img src="../../assets/svg/logo(black).svg" alt="">
-      </a>
-    </header>
+            <a class="header-back" href="javascript:history.back()">
+                <img src="../../assets/svg/backPage.svg" alt="back">
+            </a>
+            <a href="../../index.html">
+                <img src="../../assets/svg/logo(black).svg" alt="logo">
+            </a>
+        </header>
 
-    <section class="section" id="section-02">
-      <div class="sub-img-wrap">
-        <img src="00.jpg" alt="">
-      </div>
-
-      <div class="main-message" id="sub-page-black">
-        <div class="desc-wrap">
-
-            <div class="desc-elem">
-              <span class="desc-elem-name">(반수정)</span>
-              <p class="desc-elem-text">A↔B</p>
+        <section class="section" id="section-02">
+            <div class="sub-img-wrap">
+                <img src="00.jpg" alt="00">
             </div>
 
-            <div class="desc-elem">
-              <span class="desc-elem-name">대한민국을 살아가고 있는 만 23세 여성.</span>
-              <p class="desc-elem-text">이 프로젝트는 100명의 주변인(A)이 그린 작가(B)의 얼굴 그림과, B가 쓴 50편의 글로 이루어져 있다.  나는 누구인가에 대한 질문을 시작으로 100명의 A가 B의 얼굴을 그렸다. 그리고 그 중 50명의 선택하여 A와 함께 있을 때의 B의 모습에 대한 글을 썼다. 결과적으로 A에서 B로, 그리고 다시 B에서 A로 영향을 주고 받는다는 것을 거울과 책으로 표현하고자 하였다. </p>
+            <div class="main-message" id="sub-page-black">
+                <div class="desc-wrap">
+
+                    <div class="desc-elem">
+                        <span class="desc-elem-name">
+                            ( Port Rait )
+                        </span>
+                        <p class="desc-elem-text">
+                            Portrait
+                        </p>
+                    </div>
+
+                    <div class="desc-elem">
+                        <span class="desc-elem-name"><br>
+                            사람을 좋아하는 사람. 일방향적인 관찰도 좋고, 양방향적인 대화도 좋아한다. 취미는 그림 그리기. 튀고 싶은데 그렇게 막 튀긴 싫고 그렇다고 무난하기도 싫다. 그림에서 그게 엿보일지도 모른다.
+                        </span>
+                        <p class="desc-elem-text"><br>
+                            페르소나 초상화. ‘나’라는 개인의 현실과 이상에 대한 간결한 생각 혹은 고찰, 그것들을 페르소나로 형상화하여 초상화를 그린다. 단순히 생김새를 따라 그리는 것이 아닌 그를 바탕으로 개인의 경험과 성향, 행동 등에서 오는 이미지를 표현하고자 한다. 
+                        </p>
+                    </div>
+
+                    <div class="desc-elem">
+                        <span class="desc-elem-name"><br>
+                        김서희
+                        </span>
+                        <p class="desc-elem-text">
+                        </p>
+                    </div>
+
+                    <div class="desc-elem">
+                        <span class="desc-elem-name">
+                            pery0025@naver.com<br>
+                            Insta. @ya.im.ma
+                        </span>
+                        <p class="desc-elem-text"></p>
+                    </div>
+
+                </div>
             </div>
-
-            <div class="desc-elem">
-              <span class="desc-elem-name">반수정 SuJeong Ban</span>
-              <p class="desc-elem-text"></p>
+            <div class="sub-img-wrap">
+                <img src="01.gif" alt="01">
+                <img src="02.jpg" alt="02">
+                <div style="padding:61.96% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/509161465?title=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
             </div>
+        </section>
 
-            <div class="desc-elem">
-              <span class="desc-elem-name">siwanhai@gmail.com</span>
-              <p class="desc-elem-text"></p>
-            </div>
-
-        </div>
-      </div>
-      <div class="sub-img-wrap">
-        <img src="01.jpg" alt="">
-      </div>
-    </section>
-
-    <footer class="footer"></footer>
+        <footer class="footer">
+            <a href="#" class="top">Top</a>
+        </footer>
     </div>
+
+    <script>
+      $( document ).ready( function() {
+        $( window ).scroll( function() {
+          if ( $( this ).scrollTop() > 200 ) {
+            $( '.top' ).fadeIn();
+          } else {
+            $( '.top' ).fadeOut();
+          }
+        } );
+        $( '.top' ).click( function() {
+          $( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+          return false;
+        } );
+      } );
+    </script>
+
   </body>
 </html>
