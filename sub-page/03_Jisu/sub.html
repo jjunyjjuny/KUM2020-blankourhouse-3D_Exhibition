@@ -9,57 +9,98 @@
 	<link rel="stylesheet" href="../../css/default.css" />
 	<link rel="stylesheet" href="../../css/main.css" />
 	<link rel="stylesheet" href="../../css/sub.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
 
 <body>
-  <div class="background-white">
+    <div class="background-white">
 	</div>
 	<div class="container">
 		<header class="header">
-			<a class="header-back" href="../../page/personalTour.html">
-        <img src="../../assets/svg/backPage.svg" alt="">
-      </a>
-      <a href="../../index.html">
-        <img src="../../assets/svg/logo(black).svg" alt="">
-      </a>
-    </header>
+			<a class="header-back" href="javascript:history.back()">
+                <img src="../../assets/svg/backPage.svg" alt="back">
+            </a>
+            <a href="../../index.html">
+                <img src="../../assets/svg/logo(black).svg" alt="logo">
+            </a>
+        </header>
 
-    <section class="section" id="section-02">
-      <div class="sub-img-wrap">
-        <img src="00.jpg" alt="">
-      </div>
-
-      <div class="main-message" id="sub-page-black">
-        <div class="desc-wrap">
-
-            <div class="desc-elem">
-              <span class="desc-elem-name">(반수정)</span>
-              <p class="desc-elem-text">A↔B</p>
+        <section class="section" id="section-02">
+            <div class="sub-img-wrap">
+                <img src="00.jpg" alt="">
             </div>
 
-            <div class="desc-elem">
-              <span class="desc-elem-name">대한민국을 살아가고 있는 만 23세 여성.</span>
-              <p class="desc-elem-text">이 프로젝트는 100명의 주변인(A)이 그린 작가(B)의 얼굴 그림과, B가 쓴 50편의 글로 이루어져 있다.  나는 누구인가에 대한 질문을 시작으로 100명의 A가 B의 얼굴을 그렸다. 그리고 그 중 50명의 선택하여 A와 함께 있을 때의 B의 모습에 대한 글을 썼다. 결과적으로 A에서 B로, 그리고 다시 B에서 A로 영향을 주고 받는다는 것을 거울과 책으로 표현하고자 하였다. </p>
+            <div class="main-message" id="sub-page-black">
+                <div class="desc-wrap">
+
+                    <div class="desc-elem">
+                        <span class="desc-elem-name">
+                            ( 석수정 )
+                        </span>
+                        <p class="desc-elem-text">
+                            Plasticite
+                        </p>
+                    </div>
+
+                    <div class="desc-elem">
+                        <span class="desc-elem-name"><br>
+                        4년 전 일본 여행 중 고고학 상점에서 광물 표본을 접하고 광물에 매료된 여성 개발자.<br>그 후 광물을 덕질하다 우연히 지금껏 보지 못한 새로운 광물 표본을 입수했다.
+                        </span>
+                        <p class="desc-elem-text"><br>
+                        &lt;Plasticite&gt;은 학계에 출현한지 얼마되지 않은 새로운 광물종이다. 1869년 최초의 천연수지 플라스틱 셀룰로이드가 발명된 이후 약 150년의 세월동안 인류는 플라스틱과 밀접한 관계를 맺었다. 그 과정에서 플라스틱이 조합된 새로운 광물종이 인간계에 나타나게 되었다.<br>
+                        &lt;Plasticite&gt;의 특징은 기존의 광물의 형태와 속성을 모두 혼합하여 가지고 있다는 것인데, 이는 플라스틱의 특성인 변형가능성과 자유도에서 기인한 것으로 보인다.<br>
+                        이번 전시에서는 &lt;Plasticite&gt;를 연구한 내용이 담긴 책과 광물 오브젝트를 전시한다. 
+
+                        </p>
+                    </div>
+
+                    <div class="desc-elem">
+                        <span class="desc-elem-name"><br>
+                        유지수
+                        </span>
+                        <p class="desc-elem-text">
+                        </p>
+                    </div>
+
+                    <div class="desc-elem">
+                        <span class="desc-elem-name">
+                            paeby7@gmail.com<br>
+                            010-8373-3789<br>
+                            Insta. @bepaeby
+                        </span>
+                        <p class="desc-elem-text"></p>
+                    </div>
+
+                </div>
             </div>
-
-            <div class="desc-elem">
-              <span class="desc-elem-name">반수정 SuJeong Ban</span>
-              <p class="desc-elem-text"></p>
+            <div class="sub-img-wrap">
+                <img src="01.jpg" alt="01">
+                <img src="02.jpg" alt="02">
             </div>
+        </section>
 
-            <div class="desc-elem">
-              <span class="desc-elem-name">siwanhai@gmail.com</span>
-              <p class="desc-elem-text"></p>
-            </div>
-
-        </div>
-      </div>
-      <div class="sub-img-wrap">
-        <img src="01.jpg" alt="">
-      </div>
-    </section>
-
-    <footer class="footer"></footer>
+        <footer class="footer">
+            <a href="#" class="top">Top</a>
+        </footer>
     </div>
-  </body>
+
+    <script>
+      $( document ).ready( function() {
+        $( window ).scroll( function() {
+          if ( $( this ).scrollTop() > 200 ) {
+            $( '.top' ).fadeIn();
+          } else {
+            $( '.top' ).fadeOut();
+          }
+        } );
+        $( '.top' ).click( function() {
+          $( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+          return false;
+        } );
+      } );
+    </script>
+</body>
 </html>
