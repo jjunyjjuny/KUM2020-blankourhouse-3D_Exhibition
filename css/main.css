@@ -9,7 +9,7 @@ body {
     overflow-x: hidden;
     color: rgb(255, 255, 255);
     letter-spacing: -0.05em;
-    background: #1d1d1f;
+    background: #141414;
     /* background: #000; */
 }
 
@@ -264,7 +264,7 @@ a.top {
 
 
 .loading-black {
-    background-color: #1d1d1f;
+    background-color: #141414;
     z-index:  350;
     position: fixed;
     width: 100%;
