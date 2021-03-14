@@ -10,7 +10,6 @@ body {
     color: rgb(255, 255, 255);
     letter-spacing: -0.05em;
     background: #040404;
-    /* background: #000; */
 }
 
 p {
@@ -121,6 +120,10 @@ a.top {
     font-size: 3rem;
     margin-top: 3rem;
 }
+.homeTour {
+    display: block;
+}
+
 
 .homeImg {
     height: 30rem;
@@ -140,7 +143,7 @@ a.top {
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
-  margin: 10rem 0 0;
+  margin: 16rem 0 0;
 }
 
 #section-01 > video {
@@ -264,7 +267,7 @@ a.top {
 
 
 .loading-black {
-    background-color: #141414;
+    background-color: #1d1d1f;
     z-index:  350;
     position: fixed;
     width: 100%;
@@ -355,13 +358,17 @@ a.top {
 
 /* -------------- */
 
-  .section > div > h2 {
+  /* .section > div > h2 {
       font-size: 1rem;
       margin: 3rem 0 4rem;
-  }
+  } */
 
   .section > div > h2 > img {
-      height: 1.2rem;
+      height: 2rem;
+  }
+
+  .section > div > h2 {
+      margin-top: 0;
   }
 
   .homeImg {
@@ -370,7 +377,7 @@ a.top {
   }
 
   .keyringImg {
-      height: 12rem;
+      height: 28rem;
       margin: 0 2rem;
   }
 
@@ -380,7 +387,7 @@ a.top {
 
   #section-01 {
     flex-direction: row;
-    margin: 9rem 0 0;
+    margin: 8rem 0 0;
   }
 
   #section-01 > video {
@@ -390,7 +397,7 @@ a.top {
   /* ------------- */
 
   #section-02 {
-    padding: 8rem 0;
+    padding: 6rem 0;
   }
 
   #section-02 > h3 {
@@ -496,6 +503,10 @@ a.top {
   }
   .loading-mob {
       display: block;
+  }
+
+  .homeTour {
+      display: none;
   }
 }
 
