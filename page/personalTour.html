@@ -10,19 +10,20 @@
 	<link rel="stylesheet" href="../css/main.css" />
 	<link rel="preload" as="style" href="../css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- <script>
-       $(window).on('load', function(){
-            $(".loading-page").fadeOut();
+    <script>
+        $(document).ready(function () {
+            $('.loading-page').click(function () {
+                $('.loading-black').fadeOut();
+                $('.loading-page').fadeOut();   
+            });
         });
-    </script> -->
+    </script>
 </head>
 
 <body>
-    <!-- <div class="loading-page">
-        <img class="loading-mob" src="../assets/img/00_loading_mob.gif" alt="loading">
-        <img class="loading-web" src="../assets/img/00_loading_web.gif" alt="loading">
-    </div> -->
 
+    <div class="loading-page"></div>
+    <div class="loading-black"></div>
 	<div class="background-gradi"></div>
 
 	<div class="container">
@@ -169,10 +170,10 @@
           <div class="keyring-elem"> </div>
           <div class="keyring-elem"> </div>
         </div>
-      </section>
-      <footer class="footer">
-          <h5>Copyright 2021. kookmin univ. Visual Communication Design all rights reserved</h5>
-      </footer>
+        </section>
+        <footer class="footer">
+            <h5>Copyright 2021. kookmin univ. Visual Communication Design all rights reserved</h5>
+        </footer>
     </div>
 
     <script>
