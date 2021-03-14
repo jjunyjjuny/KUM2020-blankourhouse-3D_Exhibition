@@ -140,7 +140,7 @@ a.top {
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
-  margin: 16rem 0 0;
+  margin: 10rem 0 0;
 }
 
 #section-01 > video {
@@ -380,7 +380,7 @@ a.top {
 
   #section-01 {
     flex-direction: row;
-    margin: 8rem 0 0;
+    margin: 9rem 0 0;
   }
 
   #section-01 > video {
