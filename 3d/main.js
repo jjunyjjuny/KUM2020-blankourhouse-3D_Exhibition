@@ -1,10 +1,9 @@
-
-
 function calC(a, b) {
   return Math.sqrt(a ** 2 + b ** 2);
 }
 
 function popUp(data) {
+  removeHeaderFixed();
   const { count } = data;
   const backgorund = document.getElementById("background");
   const popup = document.getElementById("popup");
@@ -44,6 +43,7 @@ function popUp(data) {
   close.innerHTML = `<img src="./images/icon/X.svg" />`;
 
   close.addEventListener("click", () => {
+    addHeaderFixed();
     closePopUp();
   });
   container.appendChild(prev);
@@ -123,4 +123,13 @@ function closePopUp() {
 
   document.getElementById("background").classList.toggle("show");
   document.getElementById("popup").classList.toggle("show");
+}
+
+function removeHeaderFixed() {
+  const header = document.querySelector(".header");
+  header.style.display = "none";
+}
+function addHeaderFixed() {
+  const header = document.querySelector(".header");
+  header.style.display = "flex";
 }
