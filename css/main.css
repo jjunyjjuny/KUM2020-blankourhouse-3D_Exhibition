@@ -9,7 +9,7 @@ body {
     overflow-x: hidden;
     color: rgb(255, 255, 255);
     letter-spacing: -0.05em;
-    background: #141414;
+    background: #040404;
     /* background: #000; */
 }
 
@@ -380,7 +380,7 @@ a.top {
 
   #section-01 {
     flex-direction: row;
-    margin: 12rem 0 0;
+    margin: 8rem 0 0;
   }
 
   #section-01 > video {
