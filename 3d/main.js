@@ -50,7 +50,7 @@ function popUp(data) {
   container.appendChild(next);
   container.appendChild(close);
 
-  const dots = createDots();
+  const dots = createDots(count);
   container.appendChild(dots);
 }
 
@@ -67,12 +67,16 @@ function createSlide(data, i) {
   slide.appendChild(imgTag);
   return slide;
 }
-function createDots() {
+function createDots(count) {
   const dots = document.createElement("div");
   dots.setAttribute("id", "dots");
-  for (let i = 1; i < 6; i++) {
+  for (let i = 1; i <= count; i++) {
     const span = document.createElement("span");
+
     span.classList.add("dot");
+    if (i === 1) {
+      span.classList.add("active");
+    }
     span.addEventListener("click", () => {
       currentSlide(i);
     });
