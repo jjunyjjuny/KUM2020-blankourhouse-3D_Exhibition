@@ -127,13 +127,13 @@
       </a-assets>
       <a-sky
         id="skybox"
-        src="#point36"
+        src="#point00"
         animation__fadein="startEvents: fadein; property: material.opacity; from: 0.3; to: 1; dur: 1000;"
         animation__fadeout="startEvents: fadeout; property: material.opacity; from: 1; to: 0.3; dur: 1000;"
       >
       </a-sky>
       <a-entity id="spots" hotspots cursor="rayOrigin: mouse" position="0 0 0">
-        <a-entity id="group-point00" scale="0 0 0">
+        <a-entity id="group-point00" scale="1 1 1">
           <a-gltf-model
             animation-mixer="clip:animation_0; loop:1; timeScale: 5; crossFadeDuration: 1"
             detail="src:plus;pop:true;name:00_entrance;type:a;count:5"
@@ -1372,7 +1372,7 @@
             position="-11 -6 -3"
           ></a-image>
         </a-entity>
-        <a-entity id="group-point36" scale="1 1 1">
+        <a-entity id="group-point36" scale="0 0 0">
           <a-gltf-model
             detail="src:12_Taegeon;detail:true"
             position="-15 -3 5"
@@ -1427,7 +1427,7 @@
         camera
         position="0 1.6 0"
         look-controls="reverseMouseDrag: true"
-        rotation="-30 180 0"
+        rotation="-10 80 0"
       />
     </a-scene>
     <script src="main.js"></script>
